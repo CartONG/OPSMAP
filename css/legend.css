@@ -1,0 +1,51 @@
+.mapLegend{
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	background: #fff;
+	border-radius: 5px;
+	padding: 5px;
+	display:table;
+	position:relative;
+}
+.mapLegend .table{
+	margin-bottom:0px;
+}
+.mapLegend .table tbody tr td{
+	padding:0px 5px;
+	border-top:none;
+	vertical-align:middle;
+}
+.mapLegend .mapLegendCl{
+	display:none;
+}
+.mapLegend .mapLegendGl{
+	float:right;
+	height:100%;
+	vertical-align:middle;
+	display:block;
+	font-size:8px;
+}
+
+.mapLegend .mapLegendL{
+	display: inline-block;
+}
+.mapLegend .mapLegendB{
+	border-left:0.8px solid grey;
+	padding-right:0px;
+	cursor:pointer;
+	color:grey;
+}
+.mapLegend .mapLegendB:active{
+	color:blue;
+	text-shadow: 0px 0px 2px blue;
+}
+.mapLegend .mapLegendB:hover{
+	text-shadow: 0px 0px 2px grey;
+}
+.mapLegend .mapLegendCh{
+	cursor:pointer;
+}
+.mapLegend .mapLegendCt{
+	color:grey;
+	font-size:9px;
+	font-weight: bold;
+}

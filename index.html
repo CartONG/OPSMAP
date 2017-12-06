@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Somalia - OPSMAP</title>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="dist/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.Default.css" />
+	<link rel="stylesheet" href="dist/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<link rel="stylesheet" href="css/legend.css" />
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <div class="container">
+		<div class="row topRow">
+			<div class="col-md-4">
+				<div class="row">
+					<h3><img src="img/logo_cccm.png" height="39px"></h3>
+					<h3 style="color:red">WORK IN PROGRESS</h3>
+					<h3 id="appTitle">Somalia - OPSMAP</h3>
+					<h3><input type="text" class="form-control typeahead" placeholder="Search site ..." data-provide="typeahead"></h3>
+				</div>
+				<div class="row">
+					<div id="left_of_map">Search for a site or click on it on the map to start. </div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div id="map">
+					<div class="dropdown analysis-btn">
+					  <button class="btn btn-default dropdown-toggle " type="button" id="analysis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Analysis
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" id="dropdown-list" aria-labelledby="analysis">
+					  </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="below_map"></div>	
+	</div>
+	<div class="modal fade" style="opacity:1;background-color:white;" id="modalTable" role="dialog"  tabindex="-1">
+	  <div id="modal-dialog-table" class="modal-dialog">
+		  <div id="modal-body-table">
+                      <div class="row"><div class="col-md-12" style="text-align:center"><h2>Getting your document ready...</h2></div></div>
+                  </div>				  
+	  </div>
+	</div>
+	<div class="modal js-loading-bar">
+	 <div class="modal-dialog">
+	   <div class="modal-content">
+	     <div class="modal-body">
+	       <div class="progress progress-popup">
+	        <div class="progress-bar"></div>
+	       </div>
+	     </div>
+	   </div>
+	 </div>
+	</div>
+    <div id="pxMmTest" style="height:1mm;display:none"></div>
+    </body>	
+	
+	<script src="js/jquery-1.11.3.min.js" ></script>
+	<script src="js/jquery-ui.min.js" ></script>
+    <script src="dist/leaflet/leaflet.js"></script>
+    <script src="dist/Leaflet.markercluster/leaflet.markercluster.js"></script>
+	<script src="dist/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap3-typeahead.min.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/papaparse.min.js"></script>
+	<script src="js/html2canvas.min.js"></script>	
+	<script src="js/jspdf.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
+	<script src="js/leaflet_print/L.CanvasPointLayer.js"></script>
+	<script src="js/leaflet_print/L.GetImage.js"></script>
+	<script src="js/exportPDF.js"></script>
+	<script src="js/fsmt_testPapaparse.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+list_name,name,label::English,label::Somali,label::Maay,region,choice
+region,awdal,Awdal,Awdal,Awdal,,awdal
+region,bakool,Bakool,Bakool,Bakool,,bakool
+region,banadir,Banadir,Banadir,Banadir,,banadir
+region,bari,Bari,Bari,Bari,,bari
+region,bay,Bay,Bay,Bay,,bay
+region,galgaduud,Galgaduud,Galgaduud,Galgaduud,,galgaduud
+region,gedo,Gedo,Gedo,Gedo,,gedo
+region,hiraan,Hiraan,Hiraan,Hiraan,,hiraan
+region,lower_juba,Lower Juba,Jubadda Hoose,Jubadda Hoose,,lower_juba
+region,lower_shabelle,Lower Shabelle,Shabellada Hoose,Shabellada Hoose,,lower_shabelle
+region,middle_juba,Middle Juba,Jubadda Dhexe,Jubadda Dhexe,,middle_juba
+region,middle_shabelle,Middle Shabelle,Shabellada Dhexe,Shabellada Dhexe,,middle_shabelle
+region,mudug,Mudug,Mudug,Mudug,,mudug
+region,nugaal,Nugaal,Nugaal,Nugaal,,nugaal
+region,sanaag,Sanaag,Sanaag,Sanaag,,sanaag
+region,sool,Sool,Sool,Sool,,sool
+region,togdheer,Togdheer,Togdheer,Togdheer,,togdheer
+region,woqooyi_galbeed,Woqooyi Galbeed,Woqooyi Galbeed,Woqooyi Galbeed,,woqooyi_galbeed
+district,baki,Baki,Baki,Baki,awdal,baki
+district,borama,Borama,Borama,Borama,awdal,borama
+district,lughaye,Lughaye,Lughaye,Lughaye,awdal,lughaye
+district,zeylac,Zeylac,Zeylac,Zeylac,awdal,zeylac
+district,ceel_barde,Ceel Barde,Ceel Barde,Ceel Barde,bakool,ceel_barde
+district,rab_dhuure,Rab Dhuure,Rab Dhuure,Rab Dhuure,bakool,rab_dhuure
+district,tayeeglow,Tayeeglow,Tayeeglow,Tayeeglow,bakool,tayeeglow
+district,waajid,Waajid,Waajid,Waajid,bakool,waajid
+district,xudur,Xudur,Xudur,Xudur,bakool,xudur
+district,mogadishu,Mogadishu,Mogadishu,Mogadishu,banadir,mogadishu
+district,mogadishu_boondheere,Mogadishu_Boondheere,Mogadishu_Boondheere,Mogadishu_Boondheere,banadir,mogadishu_boondheere
+district,mogadishu_cabdulcasiis,Mogadishu_Cabdulcasiis,Mogadishu_Cabdulcasiis,Mogadishu_Cabdulcasiis,banadir,mogadishu_cabdulcasiis
+district,mogadishu_daynile,Mogadishu_Daynile,Mogadishu_Daynile,Mogadishu_Daynile,banadir,mogadishu_daynile
+district,mogadishu_dharkenley,Mogadishu_Dharkenley,Mogadishu_Dharkenley,Mogadishu_Dharkenley,banadir,mogadishu_dharkenley
+district,mogadishu_hawl_wadaag,Mogadishu_Hawl Wadaag,Mogadishu_Hawl Wadaag,Mogadishu_Hawl Wadaag,banadir,mogadishu_hawl_wadaag
+district,mogadishu_heliwa,Mogadishu_Heliwa,Mogadishu_Heliwa,Mogadishu_Heliwa,banadir,mogadishu_heliwa
+district,mogadishu_hodan,Mogadishu_Hodan,Mogadishu_Hodan,Mogadishu_Hodan,banadir,mogadishu_hodan
+district,mogadishu_kahda,Mogadishu_Kahda,Mogadishu_Kahda,Mogadishu_Kahda,banadir,mogadishu_kahda
+district,mogadishu_karaan,Mogadishu_Karaan,Mogadishu_Karaan,Mogadishu_Karaan,banadir,mogadishu_karaan
+district,mogadishu_shangaani,Mogadishu_Shangaani,Mogadishu_Shangaani,Mogadishu_Shangaani,banadir,mogadishu_shangaani
+district,mogadishu_shibis,Mogadishu_Shibis,Mogadishu_Shibis,Mogadishu_Shibis,banadir,mogadishu_shibis
+district,mogadishu_waaberi,Mogadishu_Waaberi,Mogadishu_Waaberi,Mogadishu_Waaberi,banadir,mogadishu_waaberi
+district,mogadishu_wadajir,Mogadishu_Wadajir,Mogadishu_Wadajir,Mogadishu_Wadajir,banadir,mogadishu_wadajir
+district,mogadishu_wardhiigleey,Mogadishu_Wardhiigleey,Mogadishu_Wardhiigleey,Mogadishu_Wardhiigleey,banadir,mogadishu_wardhiigleey
+district,mogadishu_xamar_jabjab,Mogadishu_Xamar Jabjab,Mogadishu_Xamar Jabjab,Mogadishu_Xamar Jabjab,banadir,mogadishu_xamar_jabjab
+district,mogadishu_xamar_weyne,Mogadishu_Xamar Weyne,Mogadishu_Xamar Weyne,Mogadishu_Xamar Weyne,banadir,mogadishu_xamar_weyne
+district,mogadishu_yaaqshiid,Mogadishu_Yaaqshiid,Mogadishu_Yaaqshiid,Mogadishu_Yaaqshiid,banadir,mogadishu_yaaqshiid
+district,bandarbayla,Bandarbayla,Bandarbayla,Bandarbayla,bari,bandarbayla
+district,bossaso,Bossaso,Bossaso,Bossaso,bari,bossaso
+district,caluula,Caluula,Caluula,Caluula,bari,caluula
+district,iskushuban,Iskushuban,Iskushuban,Iskushuban,bari,iskushuban
+district,qandala,Qandala,Qandala,Qandala,bari,qandala
+district,qardho,Qardho,Qardho,Qardho,bari,qardho
+district,baidoa,Baidoa,Baidoa,Baidoa,bay,baidoa
+district,buur_hakaba,Buur Hakaba,Buur Hakaba,Buur Hakaba,bay,buur_hakaba
+district,diinsoor,Diinsoor,Diinsoor,Diinsoor,bay,diinsoor
+district,qansax_dheere,Qansax Dheere,Qansax Dheere,Qansax Dheere,bay,qansax_dheere
+district,cabudwaaq,Cabudwaaq,Cabudwaaq,Cabudwaaq,galgaduud,cabudwaaq
+district,cadaado,Cadaado,Cadaado,Cadaado,galgaduud,cadaado
+district,ceel_buur,Ceel Buur,Ceel Buur,Ceel Buur,galgaduud,ceel_buur
+district,ceel_dheer,Ceel Dheer,Ceel Dheer,Ceel Dheer,galgaduud,ceel_dheer
+district,dhuusamarreeb,Dhuusamarreeb,Dhuusamarreeb,Dhuusamarreeb,galgaduud,dhuusamarreeb
+district,baardheere,Baardheere,Baardheere,Baardheere,gedo,baardheere
+district,belet_xaawo,Belet Xaawo,Belet Xaawo,Belet Xaawo,gedo,belet_xaawo
+district,ceel_waaq,Ceel Waaq,Ceel Waaq,Ceel Waaq,gedo,ceel_waaq
+district,doolow,Doolow,Doolow,Doolow,gedo,doolow
+district,garbahaarey,Garbahaarey,Garbahaarey,Garbahaarey,gedo,garbahaarey
+district,luuq,Luuq,Luuq,Luuq,gedo,luuq
+district,belet_weyne,Belet Weyne,Belet Weyne,Belet Weyne,hiraan,belet_weyne
+district,bulo_burto,Bulo Burto,Bulo Burto,Bulo Burto,hiraan,bulo_burto
+district,jalalaqsi,Jalalaqsi,Jalalaqsi,Jalalaqsi,hiraan,jalalaqsi
+district,afmadow,Afmadow,Afmadow,Afmadow,lower_juba,afmadow
+district,badhaadhe,Badhaadhe,Badhaadhe,Badhaadhe,lower_juba,badhaadhe
+district,jamaame,Jamaame,Jamaame,Jamaame,lower_juba,jamaame
+district,kismayo,Kismayo,Kismayo,Kismayo,lower_juba,kismayo
+district,afgooye,Afgooye,Afgooye,Afgooye,lower_shabelle,afgooye
+district,baraawe,Baraawe,Baraawe,Baraawe,lower_shabelle,baraawe
+district,kurtunwaarey,Kurtunwaarey,Kurtunwaarey,Kurtunwaarey,lower_shabelle,kurtunwaarey
+district,marka,Marka,Marka,Marka,lower_shabelle,marka
+district,qoryooley,Qoryooley,Qoryooley,Qoryooley,lower_shabelle,qoryooley
+district,sablaale,Sablaale,Sablaale,Sablaale,lower_shabelle,sablaale
+district,wanla_weyn,Wanla Weyn,Wanla Weyn,Wanla Weyn,lower_shabelle,wanla_weyn
+district,buaale,Buaale,Buaale,Buaale,middle_juba,buaale
+district,jilib,Jilib,Jilib,Jilib,middle_juba,jilib
+district,sakow,Sakow,Sakow,Sakow,middle_juba,sakow
+district,aden_yabaal,Aden Yabaal,Aden Yabaal,Aden Yabaal,middle_shabelle,aden_yabaal
+district,balcad,Balcad,Balcad,Balcad,middle_shabelle,balcad
+district,cadale,Cadale,Cadale,Cadale,middle_shabelle,cadale
+district,jowhar,Jowhar,Jowhar,Jowhar,middle_shabelle,jowhar
+district,gaalkacyo,Gaalkacyo,Gaalkacyo,Gaalkacyo,mudug,gaalkacyo
+district,galdogob,Galdogob,Galdogob,Galdogob,mudug,galdogob
+district,hobyo,Hobyo,Hobyo,Hobyo,mudug,hobyo
+district,jariiban,Jariiban,Jariiban,Jariiban,mudug,jariiban
+district,xarardheere,Xarardheere,Xarardheere,Xarardheere,mudug,xarardheere
+district,burtinle,Burtinle,Burtinle,Burtinle,nugaal,burtinle
+district,eyl,Eyl,Eyl,Eyl,nugaal,eyl
+district,garowe,Garowe,Garowe,Garowe,nugaal,garowe
+district,ceel_afweyn,Ceel Afweyn,Ceel Afweyn,Ceel Afweyn,sanaag,ceel_afweyn
+district,ceerigaabo,Ceerigaabo,Ceerigaabo,Ceerigaabo,sanaag,ceerigaabo
+district,laasqoray,Laasqoray,Laasqoray,Laasqoray,sanaag,laasqoray
+district,caynabo,Caynabo,Caynabo,Caynabo,sool,caynabo
+district,laas_caanood,Laas Caanood,Laas Caanood,Laas Caanood,sool,laas_caanood
+district,taleex,Taleex,Taleex,Taleex,sool,taleex
+district,xudun,Xudun,Xudun,Xudun,sool,xudun
+district,burco,Burco,Burco,Burco,togdheer,burco
+district,buuhoodle,Buuhoodle,Buuhoodle,Buuhoodle,togdheer,buuhoodle
+district,owdweyne,Owdweyne,Owdweyne,Owdweyne,togdheer,owdweyne
+district,sheikh,Sheikh,Sheikh,Sheikh,togdheer,sheikh
+district,berbera,Berbera,Berbera,Berbera,woqooyi_galbeed,berbera
+district,gebiley,Gebiley,Gebiley,Gebiley,woqooyi_galbeed,gebiley
+district,hargeysa,Hargeysa,Hargeysa,Hargeysa,woqooyi_galbeed,hargeysa
+yes_no,yes,Yes,Haa,Haa,,yes
+yes_no,no,No,Maya,May,,no
+gender,male,Male,Rag,Magal,,male
+gender,female,Female,Dumar,Hinrab,,female
+enum_agency,iom,IOM,IOM,IOM,,iom
+enum_agency,reach,REACH,REACH,REACH,,reach
+enum_agency,drc,DRC,DRC,DRC,,drc
+enum_agency,nrc,NRC,NRC,NRC,,nrc
+enum_agency,acted,ACTED,ACTED,ACTED,,acted
+enum_agency,concern,CONCERN,CONCERN,CONCERN,,concern
+enum_agency,worldvision,WORLDVISION,WORLDVISION,WORLD VISION,,worldvision
+enum_agency,sci,SCI,SCI,SCI,,sci
+enum_agency,other,Other,Kale,Kale,,other
+ki_role,community_leader,Community leader,Hogaamiyaha bulshada,Oday dhagameed,,community_leader
+ki_role,gatekeeper,Gatekeeper,Horjooge,hor-roog,,gatekeeper
+ki_role,elder,Elder,Oday ,Dog,,elder
+ki_role,religious_leader,Religious leader,Hogaamiye diimeed,Hor-roog diimeed,,religious_leader
+ki_role,local_government,Local government representative,Wakiil dowlada hoose ah,lanka mathalow dowlada hoose,,local_government
+ki_role,camp_manager,Camp/site manager,Maamulaha kaamka/xerada,Gudomiye harada,,camp_manager
+ki_role,business,Business person,Shaqsi ganacsade ah,lanka ganasadaaga,,business
+ki_role,ngo,NGO representative,Wakiil hay'ad aan dowli ahayn ka socda,lanka mathalow haayada,,ngo
+ki_role,other,Other,Shaqo ama kaalin kale haayo,Kale,,other
+ki_role,no_answer,Do not wish to answer,Ma rabo inaan ka jawaabo,in fadaana ini usu ku jawaaba,,no_answer
+disp_status,idp,IDP,Barakace,dadka habarakahi deegaanshow,,idp
+disp_status,hc,Host community,Dadka deegaanka,dadka deegaanka,,hc
+disp_status,refugee,Refugee,Qaxooti,ghahoti,,refugee
+disp_status,return_refugee,Returning refugee,Qaxooti dib ugu soo laabtay dalkiisa,ghahoti hanagadi,,return_refugee
+disp_status,return_idp,Returning IDP,Barakace did ugu soo laabtay deegaankiisa,barakahayaasha hanagadi,,return_idp
+ass_locale,rural,Rural,Miyi/baadiyo,baadiya,,rural
+ass_locale,urban,Urban,Magaalo,beledka,,urban
+ass_locale,peri_urban,Peri-urban,Magaalo xigeen,buula,,peri_urban
+settlement_type,planned_site,Site was planned prior to people settling here,Goobta waxaa la diyaariyay ka hor inta aanu dadku soo degin,goobta wali laha lahaajiyey dadka inta handagna kahor,,planned_site
+settlement_type,spontaneous_site,Site was spontaneously settled by residents,Goobta waxaa loo degay si deg deg ah oo aan qorsheysnayn,"goobta dadka isku dageen korsha la,aan",,spontaneous_site
+camp_management,no_management,No management,Maamul maka jiro,maamul laan,,no_management
+camp_management,local_authority,Local authority,Maamulka deegaanka,maamulka deeganka hoosa,,local_authority
+camp_management,un_agency,UN agency,Hay'ad UN ah,UN,,un_agency
+camp_management,lngo,Local NGO,Hay'ad aan dowlli ahayn oo maxali ah,Haayada deeganka isku leh,,lngo
+camp_management,ingo,International NGO,Hay'ad aan dowli ahayn oo caalami ah,haayad aalami eh,,ingo
+camp_management,residents,Residents themselves,Dadka deegaanka naftooda ayaa is maamula,dadka deegaanka,,residents
+camp_management,community_leader,Community leader/ gatekeeper,hoogaamiyaha bulshada ama ama ilaaliyaha gobta,hor-roogaha bulshada,,community_leader
+camp_management,other,Other,Maamul kale,Kale,,other
+committees,residents,Residents’ committee,Gudiga dadka deegaanka,gudiga deganka isku leh,,residents
+committees,womens,Women’s committee,Gudiga haweenka/dumarka,gudiga hanraabta isku leh,,womens
+committees,elder_meeting,Elder meeting,Kulanka duqeyda/odayaasha,shirka odayaalka,,elder_meeting
+committees,wash,WASH committee,"Gudiga nadaafada, faydhowrka iyo biyaha",gudiga nadaafada,,wash
+committees,health,Health committee,Gudiga caafimaadka,gudiga aafimaadka,,health
+committees,education,Education committee,Gudiga waxbarashada,gudiga walbarashada,,education
+committees,childrens,Childrens committee,Gudiga carruurta,gudiga owlaada,,childrens
+committees,none,None of the above,Gudiyadan midna kama jiro halkan,toona,,none
+committees,other,Other,Gudiyo kale,Kale,,other
+conflict_resolution,committees,Through committees,Iyadoo loo marayo gudiyada,iyoo lan sii marow gudiyaaalka,,committees
+conflict_resolution,community_leader,Through community leaders,Iyadoo loo marayo hogaamiyeyaasha bulshada,iyoo lan sii marow hor-roogayaalka bulshada,,community_leader
+conflict_resolution,local_government,Through local government,Iyadoo loo marayo dowlada hoose,iyoo lan sii marow dowlada hoose e degaanka,,local_government
+conflict_resolution,elders,Through elders,Iyadoo loo marayo duqeyda/ odayaasha,iyoo lan sii marow odayaalka,,elders
+conflict_resolution,ngo_un,Through NGO or UN,Iyadoo loo marayo Hay'ad aan dowli ahayn ama Qaramada midowbay (UN),iyoo lan sii marow,,ngo_un
+conflict_resolution,other,Other,Siyaabo kale,Kale,,other
+landowner,private,Private owner,Dhul qof gaar ah leeyahay,Gof si gooni eh ing leh,,private
+landowner,local_authority,Local authority/ government,Dhul maamulka deegaanka ama dowlada hoose leedahay,Dowlada deegaanka,,local_authority
+landowner,federal_govt,Federal government,Dhul dowlada federaalka leedahay,Dowlada dhehe,,federal_govt
+landowner,none,No owner,Qofna ma leh,lan in lahayne,,none
+landowner,not_known,Owner not known,Milkiilaha mala yaqaano,Gofka leh liin goradane,,not_known
+landowner,other,Other (specify),Milkiile kale ayaa leh,wal kale,,other
+private_landowner,business,Business person,Qof ganacsade ah,lanka ganasadaaga,,business
+private_landowner,politician,Politician,Siyaasi,in fedaane ini usu kujawaaba,,politician
+private_landowner,diaspora,Diaspora individual,Qof qurba joog ah,lan banaan roog eh,,diaspora
+private_landowner,host,Host Community,Dadka deegaanka,dadka deegaanka,,host
+private_landowner,clan,Clan owned land,Dhul ay qabiil leedahay,dhulka gabiilka isku leh,,clan
+private_landowner,government,Government,Dowladda,dowlad,,government
+private_landowner,other,Other,Milkiile kale,Kale,,other
+private_landowner,dnk,Don’t know,Ma garanayo,mugorodow,,dnk
+tenure_agreement,formal,Formal agreement,Heshiis qoran,heliis rasmi eh,,formal
+tenure_agreement,informal,Informal agreement,Heshiis aan qornayn,heliis rasmi in hayna,,informal
+tenure_agreement,none,No agreement,Heshiis aan jirin,"heliis la,aan",,none
+tenure_agreement,dnk,Do not know,Ma garanayo,mugorodow,,dnk
+agreement_level,community,Community level,Heer bulsho,heer bulshadeed,,community
+agreement_level,family,Family or household level,Heer qoys,heer goys,,family
+agreement_written,written,Written agreement,Heshiis qoran,ongolaasha qoraal eh,,written
+agreement_written,verbal,Verbal agreement,Heshiis afka ah,ongalaasha afka laka sheegaaw,,verbal
+rent,cash,Rent paid in cash,Kirada waxaa lagu bixiyaa lacag cadaan ah,kira kaab bees laka bihi,,cash
+rent,work_services,Rent paid in work/ services,Kirada waxaa lagu bixiyaa shaqo ama adeeg loo qabto milkiilaha dhulka,kira kaab shaqa laka bihi,,work_services
+rent,goods_aid,Rent paid in goods/ humanitarian assistance,Kirada waxaa lagu bixiyaa badeeco ama kaalmada bani aadannimo,"kira qaab maa,uun eh laka bihi",,goods_aid
+rent,no_rent,No rent paid,Kiro lama bixiyo,wal kiro ing lahayne,,no_rent
+rent,other,Rent paid in other way,Kirada waxaa loo bixiyaa siyaabo kale,0,,other
+reason_left,conflict_community,Conflict in community of origin,Colaad/ dagaal ka dhex jira bulshada isku deegaanka ah,dagaalka ka jara dadka adi haka jeeda,,conflict_community
+reason_left,conflict_surrounding,"Conflict in surrounding area, but not in my community",Colaad/ dagaal ka jira deegaanada ku hareeraysan bulshada,dagaal kajra arlaada adi ku kooytay,,conflict_surrounding
+reason_left,conflict_other,Other conflict,Colaad ama dagaalo kale,wal kale oo dagaal eh,,conflict_other
+reason_left,threats,Personal threats,Handadaad shakhsiyeed ,goodiyow qofeed,,threats
+reason_left,floods,Flooding,Daadad/ fatahaad,daad,,floods
+reason_left,drought,Drought,Abaaro,roob laag,,drought
+reason_left,no_livelihoods,No livelihood opportunities,Aan jirin fursado nololeed/ nolol maalmeed,wal fursad la erow majaraan oo nolol eh,,no_livelihoods
+reason_left,no_services,No services available,Aan jirin adeegyo,wal adeeg dadka eh maleh,,no_services
+reason_left,forced_eviction,Forcible eviction,Dhul xoog uga saarid,bogtaaling kasab eh,,forced_eviction
+reason_left,other,Other,Sababo kale,Kale,,other
+security_concerns,eviction,Eviction,Dhul ka saarid,bogtaaling ,,eviction
+security_concerns,disputes_hc,Disputes with host community,Muran kala dhexeeya dadka deegaanka,muran ka dhah jara dadka deegaanka,,disputes_hc
+security_concerns,conflict_police,Conflict with police,Colaad/dagaal kala dhexeeya Booliiska,iska dhiyow policeka eh,,conflict_police
+security_concerns,conflict_militia,Conflict with local militia,Colaad/ dagaal kala dhexeeya maleeshayad deegaanka,iska dhiyow askarta deegaanka,,conflict_militia
+security_concerns,conflict_amisom,Conflict with AMISOM,Colaad/ dagaal kala dhexeeya AMISOM,iska dhiyow dadka deegaanka eh,,conflict_amisom
+security_concerns,violence_children,Violence against children,Xadgudub ka dhan ah  caruurta,ka hadgudubow cayaalka eh,,violence_children
+security_concerns,discriminatiion,Discrimination of any groups on the site,Takoorida kooxo degan xerada/goobta,kala saarowga dadka goobtung kajaraan,,discriminatiion
+security_concerns,gbv,GBV,Tacadiyada ku salaysan jinsiga,kufsiga bilaanta,,gbv
+security_concerns,none,None,Midnaba,walba,,none
+security_concerns,other,Other,Dhibaatooyin amni kale,Kale,,other
+child_safety,unsafe_objects,"Unsafe objects (ie. Razorwire, electrical cables, UXO, land mines, abandoned military objects ect.)","Waxyaabo halis ah ( Tusaale: sakiin, fiilo koronto, hubka la isticmaalay ee aa weli qarxin, miinooyinka dhulka, waxyaabaha militariga ee looga tagay xeryaha, iwm)",wal in feylahaynee,,unsafe_objects
+child_safety,unsafe_places,"Unsafe places (ie. Riverside, open pits, latrines without lights or locks, check points ect)","Meelo halis ah ( Tusaale: webiga jiinkiisa, gododka afka furan, suuliyada aan nalka la hayn ama aan hoos ka soo xirmaynin, isbaarooyinka, iwm)",meel ing feylahayne,,unsafe_places
+child_safety,work_accident,Work related accident,Shil ka dhashay shaqada,shil hariir la leh shaqada,,work_accident
+child_safety,hazardous_work,"Exposure to hazardous place/work- such as broken kiln, charcoal burning ect.","U nugul meelaha khatarta ah/shaqooyinka- sida dhuxul gubida, iwm",in bareerow meel qatar eh,,hazardous_work
+child_safety,vehicle_accidents,Car/ vehicle accidents,Shil gaari,shil baabuur,,vehicle_accidents
+child_safety,sexual_violence,Sexual Violence,Rabsashadaha ay sameeyaan dadka rayidka ah (tusaal: dibad-bax),"ka hadgudubow bani,aadamka ah",,sexual_violence
+child_safety,civil_violence,"Civil violence (ie, clan, protest)",Dagaal hubaysan,dagaal qabiileed,,civil_violence
+child_safety,conflict,Armed conflict,Colaad ama dagaal hubaysan,dagaal hubeysan,,conflict
+child_safety,recruitment,Risk of being recruited by armed groups,Helasta ugu jira in ay qortaan kooxaha hubaysan,kalis linka jara in dad laka askarayey inta,,recruitment
+child_safety,other,Other (specify),"Waxyaabo kale, fadlan sheeq",wal kale,,other
+child_safety,dnk,I don't know,magaranayo,makasaaw,,dnk
+child_safety,none,None,Midnaba,walba,,none
+shelter_types,buul,Buul,Buul,Buush,,buul
+shelter_types,tent,Tent,Teendho,teendha,,tent
+shelter_types,timber_plastic,Timber and Plastic Sheet,Alwaax iyo bac,alwaah iyo ba,,timber_plastic
+shelter_types,wattle_daub,Wattle and Daub,Dhis iyo dhoobo,ul iyo dhooba,,wattle_daub
+shelter_types,mud_adobe,Mud Adobe Block,Bulikeeti ka sameysan dhoobo iyo caws la isku qasay,dhooba iyo geeda kala,,mud_adobe
+shelter_types,other_block,Other Block,Balook kale,meel kale oo darbi eh,,other_block
+shelter_types,brick,Brick,Bulukeeti,bulukeeti eh,,brick
+shelter_types,stone,Stone,Dhagax,shiid,,stone
+shelter_types,reinforced_concrete,Reinforced Concrete,Shub,meel shiid eh yedhong,,reinforced_concrete
+shelter_types,cgi,CGI,Shiingad,Baraaka,,cgi
+shelter_types,metal_frame,Metal Frame,Bir,darsa bir eh,,metal_frame
+shelter_types,other,Other,Wax kale,Kale,,other
+shelter_support_types,emergency,Emergency intervention,wax ka qabasho/ kaalmo deg deg ah,inis gargaarow dhagsa eh,,emergency
+shelter_support_types,transitional,Transitional intervention,Wax ka qabasho/ kaalmo kala guur ah,inis gargaarow kumeel deerow eh,,transitional
+shelter_support_types,permanent,Permanent intervention,wax ka qabasho/ kaalmo joogto ah,gargaarow ung eh,,permanent
+shelter_support_types,nfis,NFIs,Alaabta maacuunta/ waxyaabaha aan cunta ahayn,walo in hayne hunguri,,nfis
+shelter_support_types,site_planning,Site planning,Qorsheynta  ama diyaarinta goobta,meelo la seeda la fadow,,site_planning
+shelter_support_types,trainings,Trainings,Tababaro,tababar,,trainings
+shelter_support_types,other,Other,Kale,Kale,,other
+shelter_support_types,dnk,Don’t Know,Ma garanayo,mugorodow,,dnk
+water_problems,damaged,Damaged,Waxyeeloobay,dhaawac deerow,,damaged
+water_problems,dry,Dry,Qalalan ama gursaday,injagay,,dry
+water_problems,polluted,Polluted,Wasaqoobay,dhusuq eh,,polluted
+water_problems,other,Other,Dhibaatooyin kale,Kale,,other
+water_types,kiosk,Water Kiosk,Tabakaayo biyo ,meel biyaha laka dhaansadow,,kiosk
+water_types,piped,Other Piped System,Nidaam kale oo toobo gelin ah,meel kale oo tuuba eh biyo hamarow,,piped
+water_types,protected_well_hpump,Protected Well w/o hand pump,Ceel daboolan - Bambo gacmeed aan laheyn,ceel biya laka dhaansadow oo daboolan,,protected_well_hpump
+water_types,protected_well_nopump,Protected Well with hand Pump,Ceel daboolan - Bambo gacmeed leh,ceel biya laka dhaansadow oo ing daboolanayn,,protected_well_nopump
+water_types,unprotected_well,Unprotected Well,Ceel aan daboolneyn,ing daboolanayne,,unprotected_well
+water_types,burkad,Burkad,Burkad,Burkad,,burkad
+water_types,river,River,Wabi,waba,,river
+water_types,tank_tap,Tank and Tap,Haan iyo tuubo,Burkad kor la saarow iyo furaajey,,tank_tap
+water_types,truck,Water Trucking Distribution Point,Barta lagu qeybiyo biyo dhaaminta,meelo biyo laka geybiyaw,,truck
+water_types,tank,Water tank,Haanta biyaha,Hanta biyow,,tank
+water_types,other,Other (Specify),Wax kale (sheeg/qeex),wal kale,,other
+waste_disposal,daily,Daily,Maalinle/ maalin walba,maalin walba,,daily
+waste_disposal,weekly,Weekly,Isbuucle / todobaadle,isbuuci dhan markoo,,weekly
+waste_disposal,monthly,Monthly,Bille/ bil kasta,bili markoo,,monthly
+waste_disposal,more_month,Less regularly,si aan joogto ahayn/ mar mar,mar mar koo lee,,more_month
+waste_disposal,never,Never,Marnaba,walijeyna,,never
+waste_disposal,dnk,Do not know,Ma garanayo,mugorodow,,dnk
+food_distr,inkind,In kind food distributed,Raashiin qeybin,hunguri geybiyow,,inkind
+food_distr,cash,Cash for food distributed,Lacag cadaan ah oo loogu talo galay raashiin la qeybiyay,Beesa geybiyow,,cash
+food_distr,meals,Meals distributed,Cuntada bisil/ karsan oo la  qeybiyay,raashin la geybiyey,,meals
+food_distr,none,None,Midnaba,walba,,none
+food_distr_freq,twice_daily,Twice daily,Laba jeer maalintii,lama mar maalintii,,twice_daily
+food_distr_freq,daily,Daily,Maalin walba,maalin walba,,daily
+food_distr_freq,weekly,Weekly,Isbuucle / todobaadle,isbuuci dhan markoo,,weekly
+food_distr_freq,monthly,Monthly,Bille/ bil kasta,bili markoo,,monthly
+food_distr_freq,less_frequent,Less frequently,Si aan badnayn ( wax yar),mar mar koo lee,,less_frequent
+food_source,market,Market purchases,Ka soo iibsashada suuqa,wal gadshada suuga,,market
+food_source,household,Household production,Wax soo saarka qoyska,walsaarowka ida,,household
+food_source,assistance,Food assistance,Raashiin kaalmo ah,kaalma raashin eh,,assistance
+food_source,gifts,Gifts,Hadiyado,sadaga,,gifts
+food_source,borrowing,Borrowing/Debts,Soo deynsasho,amaah,,borrowing
+food_source,dnk,Don’t know,Ma garanayo,mugorodow,,dnk
+yes_no_dnk,yes,Yes,Haa,Haa,,yes
+yes_no_dnk,no,No,Maya,May,,no
+yes_no_dnk,dnk,Do not know,Ma garanayo,mugorodow,,dnk
+health_issues,cholera_awd,Cholera / AWD,Daacuun ama shuban biyood,shubin,,cholera_awd
+health_issues,malaria,Malaria,Malaariya/ duumo,dhilmaanyi,,malaria
+health_issues,polio,Polio,Cudurka dabeesha,jirida dabeelaha,,polio
+health_issues,diphtheria,Diphtheria,Xiiq dheer,hiiqla ,,diphtheria
+health_issues,other,Other,Xanuuno kale,Kale,,other
+health_issues,dnk,Don't know,Ma garanayo,makasaaw,,dnk
+health_issues,none,None,Midnaba,walba,,none
+diseases,cholera_awd,Cholera / AWD,shuban biyood,shubin,,cholera_awd
+diseases,malaria,Malaria,Malaariya/ duumo,dhilmaanyi,,malaria
+diseases,polio,Polio,Cudurka dabeesha,jirida dabeelaha,,polio
+diseases,diphtheria,Diphtheria,Xiiq dheer,hiiqla ,,diphtheria
+diseases,other,Other,Xanuuno kale,Kale,,other
+school_type,primary,Primary,Dugsiga Hoose/Dhexe,walbarasha bilaawga eh,,primary
+school_type,secondary,Secondary,Dugsiga Sare,walbarasha sare,,secondary
+school_type,ecd,Early Curriculum Development (ECD),Kobcinta carruurta ee xilaga hore ee ay yaryihiin,dugsiga owlaada,,ecd
+school_type,adult,Adult education,Waxbarashad dadka waa weyn,walbarashada dadka wiiwiing,,adult
+school_type,quranic,Quranic,Dugsi quraan,Quraan,,quranic
+school_type,other,Other (specify),"Nooc kale, fadlan sheeg",wal kale,,other
+nutrition_service,sc,Stabilization Center (SC),Xarunta jiifinta,Meel dadka laka hanaaneyow,,sc
+nutrition_service,otp,Out-patient Therapeutic Care Programme (OTP),Barnaamijka daryeelka bukaan socodka ,barnaamisha dadka jira la dareeraan,,otp
+nutrition_service,tsfp,Targeted Supplementary Feeding Programme (TSFP),Barnaamijka quudinta dheeriga ah ee la beegsado,barnaamiska guudiyowka dheeriga eh,,tsfp
+nutrition_service,bsfp,Blanket Supplementary Feed Programme (BSFP),Barnaamijka quudinta dheeriga ah ,barnaamishka quudinta kabowka dheeriga eh,,bsfp
+nutrition_service,wet_feeding,Wet Feeding,Cuntada karsan,hunguri karsang,,wet_feeding
+nutrition_service,iycf,Infant and young Child feeding (IYCF),Quudinta dhallaanka iyo caruurta yar,quudinka ciyaal yar yar,,iycf
+nutrition_service,micronutrient_supplementation,Micronutrient supplementation,Nafaqada dheeriga ah,nafaqa dheeraadka eh,,micronutrient_supplementation
+nutrition_service,other,Other,Kale,Kale,,other
+info_sources,friends_family,"Friends, neighbours and family","Saaxiib,Deris iyo qoys","Qaraaba,widaay iyo deriska",,friends_family
+info_sources,religious_leader,Religious leader,Hogaamiye diimeed,Hor-roog diimeed,,religious_leader
+info_sources,military_official,Military official,Sargaal Militari,sarkaal iidan,,military_official
+info_sources,tv,TV,TV,dhala,,tv
+info_sources,government_official,Government official,Sarkaal dowladeed,sarkaal dowlad,,government_official
+info_sources,community_leader,Community leader,Hogaamiyaha bulshada,Oday dhagameed,,community_leader
+info_sources,aid_worker,Aid worker,Shaqaalaha samafalka,shagaale haayadeed,,aid_worker
+info_sources,radio,Radio,Raadiyo,Radi,,radio
+info_sources,other,Other (please specify),"illo kale, fadlan sheeq",wal kale,,other
+info_needs,missing_persons,Missing family and friends,Qoys ama saaxiib la la'yahay,tala fiyaawang iyo daawa,,missing_persons
+info_needs,food,Food,Cunto,raashing,,food
+info_needs,health,Health advice and treatment,Talo caafimaad iyo dawo,fiyawang,,health
+info_needs,access_id,Information on how to access personal documents such as ID cards,Xog ku saabsan sida loo heli karo dukumiintiyada qofka sida kaarka aqoonsiga,si ling hariiriya haayada wal dhiibow,,access_id
+info_needs,security,Security,Amniga,amaah,,security
+info_needs,contact_aid,How to contact aid providers,Sida loola xiriiro hay'adaha kaalmada bixiya,si ling la hariira dadka guryaalka sameyow,,contact_aid
+info_needs,water,Water,Biyo,biya,,water
+info_needs,shelter,Shelter (or shelter materials),Hoyga ( ama qalabka hoyga),Gabaadka,,shelter
+info_needs,market_prices,Market prices for commodities and livestock,Sicir/qiimaha suuqa ay ka joogaan badeecada iyo xoolaha nool,Giimaha suuga,,market_prices
+info_needs,weather,Weather forecasts,Saadaasha hawada,heliyada,,weather
+info_needs,other,Other (please specify),Baahiyo kale ( fadlan sheeg),wal kale,,other
+languages,somali_standard,Standard/ Northern Somali,Af Soomaali/ Maxaa tiri,lahjada reer waqoow,,somali_standard
+languages,somali_benaadir,Benaadir Somali,Afka banaadiriga,somali benadiriga eh,,somali_benaadir
+languages,somali_maay,Maay Somali,Afk maay ,Maay somali,,somali_maay
+languages,arabic,Arabic,Carabi,Arabic,,arabic
+languages,english,English,Ingiriis,Ingiriis,,english
+languages,italian,Italian,Talyaani,Talyani,,italian
+languages,bravanese,Bravanese (Chimwiini/ Chimbalazi),Afka barawaani,Af Reer Barawe,,bravanese
+languages,kibajuni,Kibajuni,Afka baajuunta,Baajuun,,kibajuni
+languages,mushunguli,Mushunguli,Afka mushunguliga,Mshunguli,,mushunguli
+languages,somali_sign,Somali Sign Language,Midaaritaanka,Meeriyoka,,somali_sign
+languages,none,None of the above,Midnaba,toona,,none
+security,clan,Community protection (clan),Ilaalinta bulshada ,ilaaliyowka bulshada,,clan
+security,comm_sec,Commercial security,Shirkad amniga ka ganacsato,ilaala beesa qaadadaayaan,,comm_sec
+security,informal_sec, Informal site guard,Waardiye xerada/goobta ilaaliya,Hor-roog rasmi ing hayne,,informal_sec
+security,nat_police,National Police,Booliiska qaranka,askarta booliska eh,,nat_police
+security,nat_army,National army,Ciidanka qaranka,iidanka hooga garanka,,nat_army
+security,amisom_police,AMISOM Police,Booliska AMISOM,Booliska Amisom,,amisom_police
+security,amisom_military,AMISOM Military,Militariga AMISOM,Militiriga Amisom,,amisom_military
+security,other,Other,Cid kale,Kale,,other
+security,none,None,Midnaba,walba,,none
+health_access_probs,no_money,No money,Lacag la'aan,"bees la,aan",,no_money
+health_access_probs,lack_security,Lack of  security,Amni daro/la'aan,nebed laang,,lack_security
+health_access_probs,too_away,Too far away ,Aad u fog,eed inka dheer,,too_away
+health_access_probs,societal_stigma,Societal contraints/ stigma,Caqabado xaga bulshada ah/ dhaleeceyn,eeb,,societal_stigma
+health_access_probs,other,Other,Kale,Kale,,other
+security_risks,razorwire,Razorwire ,Sakiin,Sakiin,,razorwire
+security_risks,open_latrines,Open latrines,Musqulo/suuliyo furan,musqul kor ka feydan,,open_latrines
+security_risks,uxo,UXOs,Waxyaabaha qarxa,Waxyaabaha qarxa,,uxo
+security_risks,other,Other,Kale,Kale,,other
+ki_role_women,womens_representative,Women's Community Representative,Matalaha Haweenka Bulshada,Matalaha Haweenka Bulshada,,womens_representative
+ki_role_women,community_leader,Community leader,Hogaamiyaha bulshada,Oday dhagameed,,community_leader
+ki_role_women,gatekeeper,Gatekeeper,Horjooge,hor-roog,,gatekeeper
+ki_role_women,elder,Elder,Oday ,Dog,,elder
+ki_role_women,religious_leader,Religious leader,Hogaamiye diimeed,Hor-roog diimeed,,religious_leader
+ki_role_women,local_government,Local government representative,Wakiil dowlada hoose ah,lanka mathalow dowlada hoose,,local_government
+ki_role_women,camp_manager,Camp/site manager,Maamulaha kaamka/xerada,Gudomiye harada,,camp_manager
+ki_role_women,business,Business person,Shaqsi ganacsade ah,lanka ganasadaaga,,business
+ki_role_women,ngo,NGO representative,Wakiil hay'ad aan dowli ahayn ka socda,lanka mathalow haayada,,ngo
+ki_role_women,other,Other,Shaqo ama kaalin kale haayo,Kale,,other
+ki_role_women,no_answer,Do not wish to answer,Ma rabo inaan ka jawaabo,in fadaana ini usu ku jawaaba,,no_answer
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
