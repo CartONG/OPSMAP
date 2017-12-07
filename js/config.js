@@ -132,7 +132,13 @@ var config = {
 				alias : "Communication",
 				icon : "activity_public_information_60px_bluebox",
 				col: 3
-			}
+			},
+			{
+				name : "Validation",
+				alias : "Validation",
+				icon : "activity_preparedness_60px_bluebox",
+				col: 3
+			}			
 		],
 		
 		
