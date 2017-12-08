@@ -1,7 +1,6 @@
 var appConfig = {
-	// General layout
-		// AppTitle - STRING : Title
-		AppTitle : "Somalia - OPSMAP",
+	// General
+		// Language - STRING : Works only for the dictionnary.
 		Language : "en",
 		
 	// Map options
@@ -322,7 +321,7 @@ var color_list = ['#0072bc','#4095cd','#7fb8dd','#bfdcee','#bfbfbf']
 			else {
 				result= "danger"
 			}
-		}		
+		}		      
 	//percentagegreen
 		else if (tl == "percentagegreen"){
 			if (v == "more_75%" || v == "more 75%" || v == "More than 75%") {

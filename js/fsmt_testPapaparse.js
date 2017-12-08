@@ -122,7 +122,7 @@ Papa.parse("data/external_choices.csv", {
 									var esri_lightGrey = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: '&copy; <a href="http://www.esri.com/">Esri</a>,  HERE, DeLorme, MapmyIndia, © OpenStreetMap contributors, and the GIS user community ',maxZoom: 18, crossOrigin: true});
 									var esri_street = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {attribution: '&copy; <a href="http://www.esri.com/">Esri</a>', maxZoom: 18, crossOrigin: true});
 									osm_HOT.addTo(map);
-						
+				
 									var selectionArray = [];
 									if (appConfig.MapClustering){
 										var selectionLayer = L.layerGroup();
@@ -184,19 +184,19 @@ Papa.parse("data/external_choices.csv", {
 											var icon = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'.svg' : 'img/markers_icon/default.svg',
 												iconSize: [20, 20],
-												iconAnchor: [10, 20],
+												iconAnchor: [10, 10],
 												popupAnchor: [0, -20]
 											});
 											var iconHovered = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'_hovered.svg' : 'img/markers_icon/default_hovered.svg',
 												iconSize: [22, 22],
-												iconAnchor: [11, 22],
+												iconAnchor: [11, 11],
 												popupAnchor: [0, -22]						
 											});
 											var iconSelected = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'_selected.svg' : 'img/markers_icon/default_selected.svg',
 												iconSize: [22, 22],
-												iconAnchor: [11, 22],
+												iconAnchor: [11, 11],
 												popupAnchor: [0, -22]						
 											});							
 											var marker = new L.marker([parseFloat(v[config.lat]), parseFloat(v[config.lon])], {icon: icon, riseOnHover: true, obj:v}).bindPopup(toProperCase(v[config.name]),{autoPan: false});
@@ -208,13 +208,13 @@ Papa.parse("data/external_choices.csv", {
 												this.openPopup();
 												if (this.options.icon !== this.options.iconSet.iconSelected){
 													this.setIcon(this.options.iconSet.iconHovered);							
-												};
+												}
 											});
 											marker.on('mouseout', function(e) {
 												this.closePopup();
 												if (this.options.icon !== this.options.iconSet.iconSelected){
 													this.setIcon(this.options.iconSet.icon);
-												};
+												}
 											});
 											if (appConfig.MapClustering){
 												marker.on('click', function(e) {
@@ -349,7 +349,7 @@ Papa.parse("data/external_choices.csv", {
 											if(selectionArray.length){
 												csv_markers.removeLayer(selectionArray[0]);
 												selectionArray[0].addTo(selectionLayer);
-											};
+											}
 										});
 										map.on('click', function(){
 											$("#left_of_map").html("");
