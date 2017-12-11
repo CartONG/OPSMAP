@@ -247,6 +247,8 @@ Papa.parse("data/external_choices.csv", {
 											csv_markers.addLayer(marker);
 											marker_list.push({'name':toProperCase(v[config.name]), 'coordo': [parseFloat(v[config.lat]), parseFloat(v[config.lon])], "properties":v});
 											
+            
+                                            
 											// RUN ZOOM INTERACTION - Part of action described above.
 											if(appConfig.MapMaxZoom){
 												if(map.getZoom() < appConfig.MapMaxZoom){
@@ -255,6 +257,15 @@ Papa.parse("data/external_choices.csv", {
 											}
 										}
 									});
+                                
+                                csv_markers.on('animationend', function (a) {
+                                    $.each(a.target.getLayers(), function(i, v){
+                                        if (v.options.icon !== v.options.iconSet.icon){
+                                            v.setIcon(v.options.iconSet.icon);							
+                                            v.closePopup();
+                                        }   
+                                    })
+                                });               
 									$('.js-loading-bar').hide();
 									$('.container').show();
 									
