@@ -31,6 +31,9 @@ jQuery(document).ready(function() {
 		});
 	});
 
+    // Add config-defined rules to global traffic lights rules object.
+    OPSMAP_AddCustomTlRules(config.tlRules);
+    
 	var u = config.data.url;
 	var map, loc, name;
 	
