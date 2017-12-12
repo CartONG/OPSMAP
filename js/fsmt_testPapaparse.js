@@ -272,10 +272,10 @@ Papa.parse("data/external_choices.csv", {
 									$('.container').show();
 									
                                 
-                                
+                                    console.log(config);
 
 									//LEGEND GLOBALS
-                                    var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.expectedTypes, true, data, config.type, true);
+                                    var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.expectedTypes, dictionnary, appConfig.Language, true, data, config.type, true);
 									legend.addTo(map);
 		
 									
