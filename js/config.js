@@ -1,38 +1,38 @@
-var appConfig = {
-	// General
-		// Language - STRING : Works only for the dictionnary.
-		Language : "en",
-		
-	// Map options
-		// MapClustering - BOOLEAN : Enable clustering on markers (Cluster radius per zoom level to be defined below [cf:"maxClusterRadius"]).
-		MapClustering: true,
-		
-		// MapMaxBounds - BOOLEAN : Enable bounds constraint on default map's view.
-		MapMaxBounds: true,
-		
-		// MapMinZoom - INTEGER : Default map's min zoom (the min zoom has the largest extent), set to 'false' (BOOLEAN) for leaflet's default setup.
-		MapMinZoom: 4,
-		
-		// MapMaxZoom - INTEGER : Default map's max zoom (the max zoom has the smallest extent), set to 'false' (BOOLEAN) for leaflet's default setup.
-		MapMaxZoom: 22,
-		
-		// DefaultZoom - INTEGER : Default map's zoom level on start.
-		DefaultZoom: 5,
-		
-		// DefaultCenter - ARRAY : Array of FLOATs, coordinates for init map centre [y, x].
-		DefaultCenter: [5.54, 46.7],
-		
-	
+var config = {};
+config.appConfig = {
+// General
+    // Language - STRING : Works only for the dictionnary.
+    Language : "en",
+
+// Map options
+    // MapClustering - BOOLEAN : Enable clustering on markers (Cluster radius per zoom level to be defined below [cf:"maxClusterRadius"]).
+    MapClustering: true,
+
+    // MapMaxBounds - BOOLEAN : Enable bounds constraint on default map's view.
+    MapMaxBounds: true,
+
+    // MapMinZoom - INTEGER : Default map's min zoom (the min zoom has the largest extent), set to 'false' (BOOLEAN) for leaflet's default setup.
+    MapMinZoom: 4,
+
+    // MapMaxZoom - INTEGER : Default map's max zoom (the max zoom has the smallest extent), set to 'false' (BOOLEAN) for leaflet's default setup.
+    MapMaxZoom: 22,
+
+    // DefaultZoom - INTEGER : Default map's zoom level on start.
+    DefaultZoom: 5,
+
+    // DefaultCenter - ARRAY : Array of FLOATs, coordinates for init map centre [y, x].
+    DefaultCenter: [5.54, 46.7],
 }
-var dictionnary = {
-		planned_site: {
-			en: "Planned site",			
-		},
-		spontaneous_site: {
-			en: "Spontaneous site"
-		}
+// config.dictionary : set a dictionnary for dataset values - each value listed from the dataset as property of the dictionnary object holds an object containing matching aliases for given languages.
+config.dictionary = {
+    planned_site: {
+        en: "Planned site",			
+    },
+    spontaneous_site: {
+        en: "Spontaneous site"
+    }    
 }
-var config = {
+config.data = {
 		
 		// URL of the CSV
 		url : "data/dataset.csv",
@@ -49,10 +49,15 @@ var config = {
 		// Unique identifier field
 		uid : "site_name",
 		
-		// Last update
+		// Last update field
 		last_update : "date",
+    
+        // Date parser : function that get a date as string from the dataset as parameters and returns it properly formatted for display
+        dateParser : function(rawDate){
+              return getJsDateFromExcel(rawDate);
+        },
 		
-		// Type (for icon)
+		// Type (field for icon)
 		type : "settlement_type",
 		
 		// Expected types (array of expected values for types - values associated with icon set)

@@ -1,8 +1,9 @@
-function info(h, fields, ch){
+function info(h, fields, ch, map){
         //emptying divs
         left_of_map.innerHTML = "";
         below_map.innerHTML = "";
-        var c = config.categories;
+    
+        var c = config.data.categories;
 
         var dpHtml = '<div class="dropdown">';
         dpHtml += '<button id="buttonExport" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-file"></span> Export as PDF</button>';
@@ -14,16 +15,8 @@ function info(h, fields, ch){
 
         $('#left_of_map').append(dpHtml);
 
-
-
         //adding name, coordinates and last update [last_update converted from EXCEL format to DD/MM/YYYY]
-        $('#left_of_map').append('<h3><span id="itemTitle">'+toProperCase(h[config.name])+'</span><br><small id="itemDate">Last Update: '+getJsDateFromExcel(h[config.last_update])+'</small></h3>');
-//										$('#left_of_map').append('<br><select id="icon-print" name="icon-print"><option disabled selected>Export as .PDF</option><option class="exportB" data-export="fullPage">Export full page</option><option class="exportB" data-export="doc">Export several pages</option></select>');										
-//										$('#icon-print').selectmenu();
-
-
-
-
+        $('#left_of_map').append('<h3><span id="itemTitle">' + toProperCase(h[config.data.name]) + '</span><br><small id="itemDate">Last Update: ' + config.data.dateParser(h[config.data.last_update]) + '</small></h3>');
 
         //recreating divs								
         var cl = c.length;
@@ -104,8 +97,7 @@ function info(h, fields, ch){
                                 htmlStr += '<img class="tl" data-field="' + f.csv_field + '" data-tlight="' + tl + '" src="img/tl/tl-'+tl+'.svg">&nbsp;';														
                             }
                             htmlStr += '<span class="infoEl" data-field="' + f.csv_field + '" data-cat="' + f.category + '" data-chart="false">' + f.alias + ' : </span>';
-                            htmlStr += '<b class="infoVal" style="color:#4095cd" data-field="' + f.csv_field + '">' + getJsDateFromExcel(h[f.csv_field]) + '</b></p>';
-//															$("#"+f.category+"").append("<p><img class='tl' src='img/tl/tl-"+tl+".svg'>&nbsp;"+f.alias+" : <b style='color:#4095cd'>"+getJsDateFromExcel(h[f.csv_field])+"</b></p>")									
+                            htmlStr += '<b class="infoVal" style="color:#4095cd" data-field="' + f.csv_field + '">' + config.data.dateParser(h[f.csv_field]) + '</b></p>';			
                             $("#"+f.category).append(htmlStr);									
                         }
                     } else if (f.type === "exception"){
@@ -124,8 +116,7 @@ function info(h, fields, ch){
                                 htmlStr += '<img class="tl" data-field="' + f.csv_field + '" data-tlight="' + tl + '" src="img/tl/tl-'+tl+'.svg">&nbsp;';														
                             }
                             htmlStr += '<span class="infoEl" data-field="' + f.csv_field + '" data-cat="' + f.category + '" data-chart="false">' + f.alias + ' : </span>';
-                            htmlStr += '<b class="infoVal" style="color:#4095cd" data-field="' + f.csv_field + '">'+val+'</b></p>';
-//															$("#"+f.category+"").append("<p><img class='tl' src='img/tl/tl-"+tl+".svg'>&nbsp;"+f.alias+" : <b style='color:#4095cd'>"+val+"</b></p>")									
+                            htmlStr += '<b class="infoVal" style="color:#4095cd" data-field="' + f.csv_field + '">'+val+'</b></p>';							
                             $("#"+f.category).append(htmlStr);									
                         }
                     }
@@ -134,11 +125,11 @@ function info(h, fields, ch){
         }
 
         // charts
-        for (var i in config.charts){
+        for (var i in config.data.charts){
             var chartValidation = true;
 
             //create the graphs config
-            var g = config.charts[i];
+            var g = config.data.charts[i];
 
             //filter fields on "chart IS NOT NULL"
             var chartFields = fields.filter(function(obj){

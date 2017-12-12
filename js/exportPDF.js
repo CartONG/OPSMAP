@@ -5,14 +5,15 @@
                 });
             }
 
-			function exportPdf(mymap) { 
+			function exportPdf(mymap) {
+                
 		        function topFunction() {
 		            document.body.scrollTop = 0; // For Chrome, Safari and Opera
 		            document.documentElement.scrollTop = 0; // For IE and Firefox
 		        }
 
 		        topFunction();
-				 $('#modalTable').modal('show');
+				 $('#modalMask').modal('show');
 //				swal({
 //					  title: "Exporting to PDF ...",
 //					  imageUrl: "img/processing.gif",
@@ -105,7 +106,7 @@
 							$('#map').css('display','block');
 							$('.typeahead').css('display','block');
 							$('.dropdown').css('display','block');
-							 $('#modalTable').modal('hide');
+							 $('#modalMask').modal('hide');
 //						swal({
 //							  title: "Export complete ! ",
 //							  text: " ",
@@ -123,15 +124,6 @@
 			
 			function exportPdfDoc(mymap, images){
 				
-//				console.log(images);
-				
-				console.log("exportPdfDoc");
-//				swal({
-//					  title: "Exporting to PDF ...",
-//					  imageUrl: "img/processing.gif",
-//					  showConfirmButton: false,
-//					});
-				
 		        function topFunction() {
 		            document.body.scrollTop = 0; // For Chrome, Safari and Opera
 		            document.documentElement.scrollTop = 0; // For IE and Firefox
@@ -143,7 +135,7 @@
 		        $('#map').css('height', '50mm');
 		        $('#map').css('width', '80mm');
 		        
-		        $('#modalTable').modal('show');
+		        $('#modalMask').modal('show');
 
 //		        setTimeout(function(){
 //		            $('#map').css('height', '210mm');
@@ -340,10 +332,10 @@
 							// Use 'image/jpeg' for lighter output.
 							var dataUrlChart = canvasChart.toDataURL('image/jpeg', 1);
 							var hPx = $("#" + v.id).height();
-							// Pixel (Px) coversion to milimeters (Mm)
+							// Pixel (Px) coversion to milimeters (Mm) ---- TODO : SHOULD BE RE-DONE CONSIDERING #pxMmTest
 							var hMm = (hPx/1.5) * 0.2578796561604585;
 							var wPx = $("#" + v.id).width();
-							// Pixel (Px) coversion to milimeters (Mm)
+							// Pixel (Px) coversion to milimeters (Mm) ---- TODO : SHOULD BE RE-DONE CONSIDERING #pxMmTest
 							var wMm = (wPx/1.5) * 0.2578796561604585;
 							doc.addImage(dataUrlChart, 'JPG', x, y, wMm, hMm)
 							y += hMm;
@@ -356,7 +348,7 @@
 				var mapHeightInPDF = 50 ; // size of map on paper (or set height but not both)
 				var mapPosXInPDF = 10; // pdf unit, mm
 				var mapPosYInPDF = 40; // pdf unit, mm
-					
+
 				var mapSize = mymap.getSize();
 				var scale = 1;	
 				if (typeof mapWidthInPDF != 'undefined') {
@@ -377,7 +369,7 @@
 	                    $('#map').css('height', initHeight);
 	                    $('#map').css('width', initWidth);
 //	                    map.updateSize();
-	                    $('#modalTable').modal('hide');
+	                    $('#modalMask').modal('hide');
 	                }
 	                
 	                setTimeout(function(){

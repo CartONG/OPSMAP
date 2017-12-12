@@ -24,14 +24,14 @@ jQuery(document).ready(function() {
 		  xhr.send();
 	}
 	
-	$.each(config.categories, function(i, v){
+	$.each(config.data.categories, function(i, v){
 		var url  = 'img/ocha_icon/' + v.icon + '.png';
 		toDataURL(url, function(dataUrl) {
 			v['dataUrl'] = dataUrl;
 		});
 	});
 
-	var u = config.url;
+	var u = config.data.url;
 	var map, loc, name;
 	
 Papa.parse("data/external_choices.csv", {
@@ -83,26 +83,24 @@ Papa.parse("data/external_choices.csv", {
 								var fields = r.data;
 									// RUN ZOOM INTERACTION - Set zoom interaction at start to avoid shivers behaviour (along with lines below).
 									var defaultZoom = (function(){
-										if(appConfig.MapMinZoom){
-											if(appConfig.DefaultZoom > appConfig.MapMinZoom){
-												return appConfig.DefaultZoom - 1;
+										if(config.appConfig.MapMinZoom){
+											if(config.appConfig.DefaultZoom > config.appConfig.MapMinZoom){
+												return config.appConfig.DefaultZoom - 1;
 											} else {
-												return appConfig.DefaultZoom;
+												return config.appConfig.DefaultZoom;
 											}
 										} else {
-											return appConfig.DefaultZoom;
+											return config.appConfig.DefaultZoom;
 										}
 									})();
 						
 									//map
 									var map = L.map('map', {
-//										renderer: L.canvas(),
-//										preferCanvas: true,
-										minZoom: appConfig.MapMinZoom ? appConfig.MapMinZoom : "",
-										maxZoom: appConfig.MapMaxZoom ? appConfig.MapMaxZoom : "",
-									}).setView(appConfig.DefaultCenter, defaultZoom);
+										minZoom: config.appConfig.MapMinZoom ? config.appConfig.MapMinZoom : "",
+										maxZoom: config.appConfig.MapMaxZoom ? config.appConfig.MapMaxZoom : "",
+									}).setView(config.appConfig.DefaultCenter, defaultZoom);
 								
-									if(appConfig.MapMaxBounds){
+									if(config.appConfig.MapMaxBounds){
 										var bounds = map.getBounds();
 										$.each(bounds, function(k, v){
 											$.each(v, function(i, w){
@@ -111,7 +109,7 @@ Papa.parse("data/external_choices.csv", {
 										});
 										map.setMaxBounds(bounds);
 									}
-									
+                                
 									//scalebar
 									L.control.scale().addTo(map);
 									
@@ -124,13 +122,13 @@ Papa.parse("data/external_choices.csv", {
 									osm_HOT.addTo(map);
 				
 									var selectionArray = [];
-									if (appConfig.MapClustering){
+									if (config.appConfig.MapClustering){
 										var selectionLayer = L.layerGroup();
 										selectionLayer.addTo(map);
 									}
 										
 									// adding markers from CSV to map + to search fonction		
-									if (!appConfig.MapClustering){
+									if (!config.appConfig.MapClustering){
 										var csv_markers = new L.featureGroup().addTo(map);
 									} else {	
 										var csv_markers = L.markerClusterGroup({
@@ -177,9 +175,9 @@ Papa.parse("data/external_choices.csv", {
 						
 						
 									$.each(data, function(i, v){
-										if (v[config.lat] && v[config.lon]){
-											var tValues = config.expectedTypes;
-											var t = v[config.type];
+										if (v[config.data.lat] && v[config.data.lon]){
+											var tValues = config.data.expectedTypes;
+											var t = v[config.data.type];
 											t = t.toLowerCase()
 											var icon = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'.svg' : 'img/markers_icon/default.svg',
@@ -199,7 +197,7 @@ Papa.parse("data/external_choices.csv", {
 												iconAnchor: [11, 11],
 												popupAnchor: [0, -11]						
 											});							
-											var marker = new L.marker([parseFloat(v[config.lat]), parseFloat(v[config.lon])], {icon: icon, riseOnHover: true, obj:v}).bindPopup(toProperCase(v[config.name]),{autoPan: false});
+											var marker = new L.marker([parseFloat(v[config.data.lat]), parseFloat(v[config.data.lon])], {icon: icon, riseOnHover: true, obj:v}).bindPopup(toProperCase(v[config.data.name]),{autoPan: false});
 											marker.options.iconSet = {};
 											marker.options.iconSet.icon = icon;
 											marker.options.iconSet.iconHovered = iconHovered;
@@ -216,7 +214,7 @@ Papa.parse("data/external_choices.csv", {
 													this.setIcon(this.options.iconSet.icon);
 												}
 											});
-											if (appConfig.MapClustering){
+											if (config.appConfig.MapClustering){
 												marker.on('click', function(e) {
 													this.setIcon(this.options.iconSet.iconSelected);
 													this.setZIndexOffset(1000);
@@ -229,7 +227,7 @@ Papa.parse("data/external_choices.csv", {
 														selectionArray.splice(0, 1);
 													}
 													selectionArray.push(this);
-													info(this.options.obj, fields, ch);				
+													info(this.options.obj, fields, ch, map);				
 												});
 											} else {
 												marker.on('click', function(e) {
@@ -240,12 +238,12 @@ Papa.parse("data/external_choices.csv", {
 														selectionArray.splice(0, 1);
 													}
 													selectionArray.push(this);
-													info(this.options.obj, fields, ch);
+													info(this.options.obj, fields, ch, map);
 												});
 											}
 						
 											csv_markers.addLayer(marker);
-											marker_list.push({'name':toProperCase(v[config.name]), 'coordo': [parseFloat(v[config.lat]), parseFloat(v[config.lon])], 'properties':v});
+											marker_list.push({'name':toProperCase(v[config.data.name]), 'coordo': [parseFloat(v[config.data.lat]), parseFloat(v[config.data.lon])], 'properties':v});
 											
             
                                             
@@ -255,8 +253,8 @@ Papa.parse("data/external_choices.csv", {
                                 
                                 
                                             // RUN ZOOM INTERACTION - Part of action described above.
-											if(appConfig.MapMaxZoom){
-												if(map.getZoom() < appConfig.MapMaxZoom){
+											if(config.appConfig.MapMaxZoom){
+												if(map.getZoom() < config.appConfig.MapMaxZoom){
 													map.setZoom(map.getZoom() + 1);
 												}
 											}
@@ -276,12 +274,12 @@ Papa.parse("data/external_choices.csv", {
                                 
 
 									//LEGEND GLOBALS
-                                    var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.expectedTypes, dictionnary, appConfig.Language, true, data, config.type, true);
+                                    var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.data.expectedTypes, config.dictionary, config.appConfig.Language, true, data, config.data.type, true);
 									legend.addTo(map);
 		
 									
 									
-									if (appConfig.MapClustering){
+									if (config.appConfig.MapClustering){
 										map.on('zoomstart', function(){
 											if(selectionArray.length){
 												csv_markers.removeLayer(selectionArray[0]);
@@ -314,17 +312,16 @@ Papa.parse("data/external_choices.csv", {
 									$('.typeahead').typeahead({
 										source:marker_list,
 										afterSelect: function(item){
-											info(item.properties, fields, ch);
-//                                            csv_markers.off('animationend');                                              
+											info(item.properties, fields, ch, map);                                          
 											function interaction(obj){
 												csv_markers.zoomToShowLayer(obj);
                                                     obj.setIcon(obj.options.iconSet.iconSelected);
                                                     obj.setZIndexOffset(1000);
                                                     var run = true;
                                                     if(selectionArray.length){
-                                                        if(toProperCase(selectionArray[0].options.obj[config.name]) !== item.name){
+                                                        if(toProperCase(selectionArray[0].options.obj[config.data.name]) !== item.name){
                                                             selectionArray[0].setIcon(selectionArray[0].options.iconSet.icon);
-                                                            if(appConfig.MapClustering){
+                                                            if(config.appConfig.MapClustering){
                                                                 if(selectionLayer.getLayers().length){
                                                                     selectionLayer.removeLayer(selectionArray[0]);
                                                                     csv_markers.addLayer(selectionArray[0]);
@@ -343,7 +340,7 @@ Papa.parse("data/external_choices.csv", {
 											}
 											var found = false;
 												$.each(csv_markers.getLayers(), function(i, v){
-													if (item.name === toProperCase(v.options.obj[config.name])){							
+													if (item.name === toProperCase(v.options.obj[config.data.name])){							
 														interaction(v);
 														found = true;
 														return false;
@@ -352,7 +349,7 @@ Papa.parse("data/external_choices.csv", {
 											if(!found){
 												$('.mapLegendCh:checkbox:not(:checked)').click();
 												$.each(csv_markers.getLayers(), function(i, v){
-													if (item.name === toProperCase(v.options.obj[config.name])){							
+													if (item.name === toProperCase(v.options.obj[config.data.name])){							
 														interaction(v);
 														found = true;
 														return false;
@@ -390,7 +387,7 @@ Papa.parse("data/external_choices.csv", {
 									$('.typeahead').val('');
 									$('#left_of_map').show();
 									
-									var c = config.categories;
+									var c = config.data.categories;
 									
 									//map analysis
 									for (var i in c){

@@ -11,16 +11,16 @@
  * @params pos String : position of the control in the map (see Leaflet reference L.control).
  * @params layerGroup Object : L.layerGroup to be described by the legend.
  * @params expectedValues Array : array of values expected in the legend (restrains possible values) - Set to false (Boolean) if not required.
- * @params dictionnary Object : return alias for certain values (see dictionnary example in utils.js).
+ * @params dictionary Object : return alias for certain values (see config.dictionary in config.js).
  * @params language String : language parameter to find the relevant alias in the dictionnary.
  * @params count Boolean : if true, displays the feature counts in the legend (set to false to hide it).
  * @params dataset Array : array of objects : the dataset to be displayed in the map (used for the count).
  * @params field String : name of the field that contains the values to be displayed in the legend.
  * @params checkboxes Boolean : if true, displays the checkboxes alowing filter based on legend entry.
  */
-var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionnary, language, count, dataset, field, checkboxes){
+var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionary, language, count, dataset, field, checkboxes){
     var legend = L.control({position: pos});
-    legend.dictionnary = dictionnary;
+    legend.dictionary = dictionary;
     legend.language = language;
     legend.count = count;
     legend.field = field;
@@ -67,7 +67,7 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionnary, l
         var htmlStr = '<div class="mapLegendL"><table class="table"><tbody><tr><td><table class="table"><tbody>';
         $.each(obj.list, function(i, v){
             //LEGEND GLOBALS
-            var text = legend.dictionnary[v] ? legend.dictionnary[v][legend.language] : v;
+            var text = legend.dictionary[v] ? legend.dictionary[v][legend.language] : v;
             htmlStr += '<tr>';
             htmlStr += '<td><img height="15px" src="img/markers_icon/' + v + '.svg"></td><td><span class="mapLegendTx">' + text + '</span></td>';
             if(legend.count){
