@@ -271,88 +271,11 @@ Papa.parse("data/external_choices.csv", {
 									$('.js-loading-bar').hide();
 									$('.container').show();
 									
-									var legend = L.control({position: 'bottomright'});
-									legend.legendDisplay = new L.featureGroup();
-									legend.onAdd = function(map){
-										this._div = L.DomUtil.create('div', 'mapLegend table-responsive');
-										$(this._div).hover(
-											function(){
-												map.doubleClickZoom.disable();
-											},
-											function(){
-												map.doubleClickZoom.enable();
-											}
-										);
-										//LEGEND GLOBALS
-										this.update(config.expectedTypes, true, data, config.type, true);
-										return this._div;
-									};
-									legend.update = function(expectedValues, count, dataset, field, checkboxes){
-										var obj = {};
-										if(dataset && field){
-											if(!expectedValues){
-												obj = getUniqueValues(dataset, field);
-											} else {
-												var temp = getUniqueValues(dataset, field);
-												obj.list = [];
-												obj.count = {};
-												$.each(temp.list, function(i, v){
-													if(expectedValues.indexOf(v) !== -1){
-														obj.list.push(v);
-														obj.count[v] = temp.count[v];
-													}
-												});
-											}
-										} else {
-											obj.list = expectedValues;
-										}
-										// Renew div
-										var htmlStr = '<div class="mapLegendL"><table class="table"><tbody><tr><td><table class="table"><tbody>';
-										$.each(obj.list, function(i, v){
-											//LEGEND GLOBALS
-											var text = dictionnary[v] ? dictionnary[v][appConfig.Language] : v;
-											htmlStr += '<tr>';
-											htmlStr += '<td><img height="15px" src="img/markers_icon/' + v + '.svg"></td><td><span class="mapLegendTx">' + text + '</span></td>';
-											if(count){
-												htmlStr += '<td class="mapLegendCl"><span class="mapLegendCt" title="' + obj.count[v] + ' feature(s)">' + obj.count[v] + '</span></td>';										
-											}
-											if(checkboxes){
-												htmlStr += '<td class="mapLegendCl"><input class="mapLegendCh" data-field="' + field + '" type="checkbox" style="float:right" value="' + v + '" checked></td>';										
-											}
-											htmlStr += '</tr>';
-										});
-										htmlStr += '</tbody></table></td><td class="mapLegendB" rowspan="' + obj.list.length + '"><span id="test" class="mapLegendGl glyphicon glyphicon-chevron-right"></span></td></tr><tr></tr></tbody></table></div>';
-										$(this._div).append(htmlStr);
-										
-										// Set events
-		
-										$(this._div).on('click', '.mapLegendB', function(){
-											$('.mapLegendCl').toggle(100);
-											$('.mapLegendGl').toggleClass('glyphicon-chevron-left').toggleClass('glyphicon-chevron-right');
-										})						
-										$(this._div).on('change', '.mapLegendCh', function(){
-											var item = this;
-											if(this.checked){												
-												//LEGEND GLOBALS
-												legend.legendDisplay.eachLayer(function (layer) {
-													if (layer.options.obj[item.dataset.field] === item.value) {
-														//LEGEND GLOBALS												
-														layer.addTo(csv_markers);
-														legend.legendDisplay.removeLayer(layer);		
-													}
-												});
-											} else {									
-												csv_markers.eachLayer(function (layer) {
-													if (layer.options.obj[item.dataset.field] === item.value) {
-														//LEGEND GLOBALS												
-														layer.addTo(legend.legendDisplay);
-														csv_markers.removeLayer(layer);		
-													}
-												});										
-											}
-										});																										
-									};
-									//LEGEND GLOBALS						
+                                
+                                
+
+									//LEGEND GLOBALS
+                                    var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.expectedTypes, true, data, config.type, true);
 									legend.addTo(map);
 		
 									

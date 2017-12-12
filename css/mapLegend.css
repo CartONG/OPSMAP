@@ -1,3 +1,8 @@
+/* mapLegend.css
+ * Custom map legend for leaflet.js (tested with 0.7.7).
+ * Goes along with mapLegend.js
+ */
+
 .mapLegend{
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 	background: #fff;
