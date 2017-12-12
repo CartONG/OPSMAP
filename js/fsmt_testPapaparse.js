@@ -185,19 +185,19 @@ Papa.parse("data/external_choices.csv", {
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'.svg' : 'img/markers_icon/default.svg',
 												iconSize: [20, 20],
 												iconAnchor: [10, 10],
-												popupAnchor: [0, -20]
+												popupAnchor: [0, -10]
 											});
 											var iconHovered = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'_hovered.svg' : 'img/markers_icon/default_hovered.svg',
 												iconSize: [22, 22],
 												iconAnchor: [11, 11],
-												popupAnchor: [0, -22]						
+												popupAnchor: [0, -11]						
 											});
 											var iconSelected = L.icon({
 												iconUrl: tValues.indexOf(t) !== -1 ? 'img/markers_icon/'+t+'_selected.svg' : 'img/markers_icon/default_selected.svg',
 												iconSize: [22, 22],
 												iconAnchor: [11, 11],
-												popupAnchor: [0, -22]						
+												popupAnchor: [0, -11]						
 											});							
 											var marker = new L.marker([parseFloat(v[config.lat]), parseFloat(v[config.lon])], {icon: icon, riseOnHover: true, obj:v}).bindPopup(toProperCase(v[config.name]),{autoPan: false});
 											marker.options.iconSet = {};
@@ -258,14 +258,16 @@ Papa.parse("data/external_choices.csv", {
 										}
 									});
                                 
-                                csv_markers.on('animationend', function (a) {
-                                    $.each(a.target.getLayers(), function(i, v){
-                                        if (v.options.icon !== v.options.iconSet.icon){
-                                            v.setIcon(v.options.iconSet.icon);							
-                                            v.closePopup();
-                                        }   
-                                    })
-                                });               
+                                    // animationend event : avoids hovered markers to get "trapped" into a cluster (and hence keep the hovered style) on zoom change.
+                                    csv_markers.on('animationend', function (a) {
+                                        $.each(a.target.getLayers(), function(i, v){
+                                            if (v.options.icon === v.options.iconSet.iconHovered){
+                                                v.setIcon(v.options.iconSet.icon);							
+                                                v.closePopup();
+                                            }   
+                                        })
+                                    });
+                                
 									$('.js-loading-bar').hide();
 									$('.container').show();
 									
@@ -389,30 +391,31 @@ Papa.parse("data/external_choices.csv", {
 										source:marker_list,
 										afterSelect: function(item){
 											info(item.properties);
+//                                            csv_markers.off('animationend');                                              
 											function interaction(obj){
 												csv_markers.zoomToShowLayer(obj);
-												obj.setIcon(obj.options.iconSet.iconSelected);
-												obj.setZIndexOffset(1000);
-												var run = true;
-												if(selectionArray.length){
-													if(toProperCase(selectionArray[0].options.obj[config.name]) !== item.name){
-														selectionArray[0].setIcon(selectionArray[0].options.iconSet.icon);
-														if(appConfig.MapClustering){
-															if(selectionLayer.getLayers().length){
-																selectionLayer.removeLayer(selectionArray[0]);
-																csv_markers.addLayer(selectionArray[0]);
-															}
-														}
-														selectionArray.splice(0, 1);
-													} else {
-														run = false;
-													}
-		
-												}
-												if(run){
-													selectionArray.push(obj);
-													obj.openPopup();
-												}
+                                                    obj.setIcon(obj.options.iconSet.iconSelected);
+                                                    obj.setZIndexOffset(1000);
+                                                    var run = true;
+                                                    if(selectionArray.length){
+                                                        if(toProperCase(selectionArray[0].options.obj[config.name]) !== item.name){
+                                                            selectionArray[0].setIcon(selectionArray[0].options.iconSet.icon);
+                                                            if(appConfig.MapClustering){
+                                                                if(selectionLayer.getLayers().length){
+                                                                    selectionLayer.removeLayer(selectionArray[0]);
+                                                                    csv_markers.addLayer(selectionArray[0]);
+                                                                }
+                                                            }
+                                                            selectionArray.splice(0, 1);
+                                                        } else {
+                                                            run = false;
+                                                        }
+
+                                                    }
+                                                    if(run){
+                                                        selectionArray.push(obj);
+                                                        obj.openPopup();
+                                                    }
 											}
 											var found = false;
 												$.each(csv_markers.getLayers(), function(i, v){
@@ -432,6 +435,17 @@ Papa.parse("data/external_choices.csv", {
 													}			
 												});	
 											}
+//                                            setTimeout(function(){
+//                                                csv_markers.on('animationend', function (a) {
+//                                                    $.each(a.target.getLayers(), function(i, v){
+//                                                        if (v.options.icon === v.options.iconSet.iconHovered){
+//                                                            v.setIcon(v.options.iconSet.icon);							
+//                                                            v.closePopup();
+//                                                        }   
+//                                                    })
+//                                                });  
+//                                            }, 500);
+                                            
 										},
 									})
 									
@@ -447,8 +461,9 @@ Papa.parse("data/external_choices.csv", {
 										"Sites": csv_markers
 									};
 									L.control.layers(baseMaps, overlayMaps).addTo(map);
-									
+									                                    
 									$('.typeahead').show();
+									$('.typeahead').val('');
 									$('#left_of_map').show();
 									
 									var c = config.categories;
@@ -764,7 +779,6 @@ Papa.parse("data/external_choices.csv", {
 											exportPdfDoc(map);
 										}
 									});										
-									
 								}
 							}
 						});
