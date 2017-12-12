@@ -1,14 +1,18 @@
 /* mapLegend.js
  * Custom map legend for leaflet.js (tested with 0.7.7).
  * Goes along with mapLegend.css
- * Works with jQuery.
+ * Require : 
+ *  - jQuery,
+ *  - function getUniqueValues(s, f) from utils.js,
+ *  - Bootstrap : glyphicon + table-responsive class.
  */
 var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, count, dataset, field, checkboxes){
     var legend = L.control({position: pos});    
     legend.count = count;
+    legend.field = field;
     legend.checkboxes = checkboxes;
-    legend.ref = {};
     legend.layerGroup = layerGroup;
+    legend.ref = {};
     if(dataset && field){
         if(!expectedValues){
             legend.ref = getUniqueValues(dataset, field);
@@ -28,7 +32,7 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, count, dataset
     }
     
     legend.legendDisplay = new L.featureGroup();
-    legend.onAdd = function(map, layerGroup, expectedValues, count, dataset, field, checkboxes){
+    legend.onAdd = function(map){
         this._div = L.DomUtil.create('div', 'mapLegend table-responsive');
         $(this._div).hover(
             function(){
@@ -39,18 +43,14 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, count, dataset
             }
         );
         //LEGEND GLOBALS
-        this.update(expectedValues, count, dataset, field, checkboxes);
+        this.update();
         return this._div;
     };
     
-    legend.update = function(layerGroup, expectedValues, count, dataset, field, checkboxes){
+    legend.update = function(){
         var obj = this.ref;
         // Renew div
         var htmlStr = '<div class="mapLegendL"><table class="table"><tbody><tr><td><table class="table"><tbody>';
-        console.log(obj)
-        console.log(this.layerGroup);
-        console.log(this.count);
-        console.log(dictionnary);
         $.each(obj.list, function(i, v){
             //LEGEND GLOBALS
             var text = dictionnary[v] ? dictionnary[v][appConfig.Language] : v;
@@ -60,7 +60,7 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, count, dataset
                 htmlStr += '<td class="mapLegendCl"><span class="mapLegendCt" title="' + obj.count[v] + ' feature(s)">' + obj.count[v] + '</span></td>';										
             }
             if(legend.checkboxes){
-                htmlStr += '<td class="mapLegendCl"><input class="mapLegendCh" data-field="' + field + '" type="checkbox" style="float:right" value="' + v + '" checked></td>';										
+                htmlStr += '<td class="mapLegendCl"><input class="mapLegendCh" data-field="' + legend.field + '" type="checkbox" style="float:right" value="' + v + '" checked></td>';										
             }
             htmlStr += '</tr>';
         });
@@ -70,13 +70,11 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, count, dataset
         // Set events
 
         $(this._div).on('click', '.mapLegendB', function(){
-            console.log('test')
             $('.mapLegendCl').toggle(100);
             $('.mapLegendGl').toggleClass('glyphicon-chevron-left').toggleClass('glyphicon-chevron-right');
         })						
         $(this._div).on('change', '.mapLegendCh', function(){
             var item = this;
-            console.log(this)
             if(this.checked){												
                 //LEGEND GLOBALS
                 legend.legendDisplay.eachLayer(function (layer) {
