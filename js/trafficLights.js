@@ -1,3 +1,8 @@
+/* OPSMAP trafficLights.js - Dec. 2017 - CartONG */
+
+/* OPSMAP_tlRules : Contains general rules for traffic lights.
+ * To be extended through the config.tlRules Object in config.js
+ */
 var OPSMAP_tlRules = {
     "yesgreen" : function(v){
         if (v === "yes" || v === "Yes"){

@@ -47,7 +47,7 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionary, la
     
     legend.legendDisplay = new L.featureGroup();
     legend.onAdd = function(map){
-        this._div = L.DomUtil.create('div', 'mapLegend table-responsive');
+        this._div = L.DomUtil.create('div', 'mapLegend table-responsive');        
         $(this._div).hover(
             function(){
                 map.doubleClickZoom.disable();
@@ -66,7 +66,6 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionary, la
         // Renew div
         var htmlStr = '<div class="mapLegendL"><table class="table"><tbody><tr><td><table class="table"><tbody>';
         $.each(obj.list, function(i, v){
-            //LEGEND GLOBALS
             var text = legend.dictionary[v] ? legend.dictionary[v][legend.language] : v;
             htmlStr += '<tr>';
             htmlStr += '<td><img height="15px" src="img/markers_icon/' + v + '.svg"></td><td><span class="mapLegendTx">' + text + '</span></td>';

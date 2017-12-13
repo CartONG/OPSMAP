@@ -1,3 +1,5 @@
+/* OPSMAP config.js - Dec. 2017 - CartONG */
+
 swal({
 	  title: 'Loading',
 	  html: '<i class="glyphicon glyphicon-hourglass" style="font-size: 40px;color:#286090"></i>',

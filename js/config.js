@@ -1,3 +1,5 @@
+/* OPSMAP config.js - Dec. 2017 - CartONG */
+
 var config = {};
 config.appConfig = {
 // General

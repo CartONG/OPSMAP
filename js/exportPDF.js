@@ -1,3 +1,5 @@
+  /* OPSMAP exportPDF.js - Dec. 2017 - CartONG */
+
             function PDFaddTextBloc(arrayOfTextLines, docX, docY, spacing) {
                 $.each(arrayOfTextLines, function(i, v){
                     doc.text(docX, docY, v);
