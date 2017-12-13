@@ -1,9 +1,8 @@
-/* OPSMAP config.js - Dec. 2017 - CartONG */
+/* OPSMAP site.js - Dec. 2017 - CartONG */
 
 swal({
 	  title: 'Loading',
 	  html: '<i class="glyphicon glyphicon-hourglass" style="font-size: 40px;color:#286090"></i>',
-//	  imageUrl: "img/loading.gif",
 	  showConfirmButton: false
 	});
 jQuery(document).ready(function() {
@@ -36,10 +35,10 @@ jQuery(document).ready(function() {
     // Add config-defined rules to global traffic lights rules object.
     OPSMAP_AddCustomTlRules(config.tlRules);
     
-	var u = config.data.url;
+	var u = config.data;
 	var map, loc, name;
 	
-Papa.parse("data/external_choices.csv", {
+Papa.parse(u.urlExC, {
 	download: true,
 	header: true,	
 //	worker: true,	
@@ -53,14 +52,14 @@ Papa.parse("data/external_choices.csv", {
 			}
 			ext[v.list_name][v.name] = v["label"];
 		});
-		Papa.parse("data/choices.csv", {
+		Papa.parse(u.urlC, {
 			download: true,
 //			worker: true,	
 			header: true,	
 			delimiter: ",",
 			complete: function(choices){
 				var rawChoices = choices.data;
-				Papa.parse(u, {
+				Papa.parse(u.urlD, {
 					download: true,
 					header: true,
 //					worker: true,	
@@ -79,7 +78,7 @@ Papa.parse("data/external_choices.csv", {
 								ch[k] = v;
 							}
 						});			
-						Papa.parse("data/fields.csv", {
+						Papa.parse(u.urlF, {
 							download: true,
 							header: true,
 //							worker: true,	
@@ -232,7 +231,8 @@ Papa.parse("data/external_choices.csv", {
 														selectionArray.splice(0, 1);
 													}
 													selectionArray.push(this);
-													info(this.options.obj, fields, ch, map);				
+													info(this.options.obj, fields, ch, map);
+                                                    $(".typeahead").val("");
 												});
 											} else {
 												marker.on('click', function(e) {
@@ -244,25 +244,21 @@ Papa.parse("data/external_choices.csv", {
 													}
 													selectionArray.push(this);
 													info(this.options.obj, fields, ch, map);
+                                                    $(".typeahead").val("");
 												});
 											}
 						
 											csv_markers.addLayer(marker);
-											marker_list.push({'name':toProperCase(v[config.data.name]), 'coordo': [parseFloat(v[config.data.lat]), parseFloat(v[config.data.lon])], 'properties':v});
-											
-            
-                                            
-
+											marker_list.push({'name':toProperCase(v[config.data.name]), 'coordo': [parseFloat(v[config.data.lat]), parseFloat(v[config.data.lon])], 'properties':v});											                                                        
 										}
 									});
-                                
-                                
-                                            // RUN ZOOM INTERACTION - Part of action described above.
-											if(config.appConfig.MapMaxZoom){
-												if(map.getZoom() < config.appConfig.MapMaxZoom){
-													map.setZoom(map.getZoom() + 1);
-												}
-											}
+                                                                
+                                    // RUN ZOOM INTERACTION - Part of action described above.
+                                    if(config.appConfig.MapMaxZoom){
+                                        if(map.getZoom() < config.appConfig.MapMaxZoom){
+                                            map.setZoom(map.getZoom() + 1);
+                                        }
+                                    }
                                 
                                     // animationend event : avoids hovered markers to get "trapped" into a cluster (and hence keep the hovered style) on zoom change.
                                     csv_markers.on('animationend', function (a) {
@@ -275,14 +271,11 @@ Papa.parse("data/external_choices.csv", {
                                     });
                                 
 									$('.js-loading-bar').hide();
-									$('.container').show();
-                                
+									$('.container').show();                                
 
 									//LEGEND GLOBALS
                                     var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.data.expectedTypes, config.dictionary, config.appConfig.Language, true, data, config.data.type, true);
-									legend.addTo(map);
-		
-									
+									legend.addTo(map);											
 									
 									if (config.appConfig.MapClustering){
 										map.on('zoomstart', function(){
@@ -301,7 +294,8 @@ Papa.parse("data/external_choices.csv", {
 													csv_markers.addLayer(selectionArray[0]);
 												}
 												selectionArray.splice(0, 1);
-											}					
+											}
+                                            $(".typeahead").val("");
 										});
 									} else {
 										map.on('click', function(){
@@ -361,18 +355,8 @@ Papa.parse("data/external_choices.csv", {
 													}			
 												});	
 											}
-//                                            setTimeout(function(){
-//                                                csv_markers.on('animationend', function (a) {
-//                                                    $.each(a.target.getLayers(), function(i, v){
-//                                                        if (v.options.icon === v.options.iconSet.iconHovered){
-//                                                            v.setIcon(v.options.iconSet.icon);							
-//                                                            v.closePopup();
-//                                                        }   
-//                                                    })
-//                                                });  
-//                                            }, 500);
-                                            
-										},
+                                            $('.typeahead').val("");                                        
+										}
 									})
 									
 									//layer switcher

@@ -36,8 +36,17 @@ config.dictionary = {
 }
 config.data = {
 		
-		// URL of the CSV
-		url : "data/dataset.csv",
+		// URL of the dataset
+		urlD : "data/dataset.csv",
+    
+		// URL of the fields definition
+		urlF : "data/fields.csv",    
+    
+		// URL of the choices
+		urlC : "data/choices.csv",
+    
+		// URL of the external choices
+		urlExC : "data/external_choices.csv",    
 		
 		// Latitude field
 		lat : "geopoint_latitude",
