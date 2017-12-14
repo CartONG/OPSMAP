@@ -46,7 +46,7 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
     var layer;
     for (var layerId in this.map._layers) {
       layer = this.map._layers[layerId];
-      
+
       if (layer._icon) {
         if (layer._icon.tagName === 'IMG'){
           if (layer._shadow) {
@@ -54,28 +54,7 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
           }
           this.loadImage(layer._icon);
         } else if (layer._icon.tagName === 'DIV') {
-          this.remaining++;
-
-          var sort = this.sort++;
-
-          var bounds = layer._icon.getBoundingClientRect();
-
-          var pos = {
-		        x: bounds.left - this.mapOffset.left,
-		        y: bounds.top - this.mapOffset.top,
-		        w: bounds.width,
-		        h: bounds.height
-		      };
-
-          html2canvas(layer._icon, {
-						onrendered: function(canvas) {
-              this.remaining--;
-              this.assets.push({ type: 'image', image: canvas, pos: pos, sort: sort });
-              if (this.remaining === 0) {
-                this.complete();
-              }
-            }.bind(this)
-					});
+          this.htmlToImage(layer._icon);
         }
       }
  
@@ -128,7 +107,7 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
             layer._point.x + this.mapTranslation[0],
             layer._point.y + this.mapTranslation[1]
           ];
- 
+
           this.assets.push({
             type: 'geometry',
             geometry: { type: 'circle', center: center, radius: layer._radius },
@@ -148,7 +127,7 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
               ]
             })
           });
- 
+
           this.assets.push({
             type: 'geometry',
             geometry: { type: 'polygon', polygon: polygon },
@@ -191,7 +170,28 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
     image.crossOrigin = '';
     image.src = item.src;
   };
- 
+
+  L.GetImage.prototype.htmlToImage = function(item) {
+    this.remaining++;
+    var sort = this.sort++;
+
+    var bounds = item.getBoundingClientRect();
+    var pos = {
+      x: bounds.left - this.mapOffset.left,
+      y: bounds.top - this.mapOffset.top,
+      w: bounds.width,
+      h: bounds.height
+    };
+
+    html2canvas(item, { async: false }).then(function(canvas) {
+      this.assets.push({ type: 'image', image: canvas, pos: pos, sort: sort });
+      this.remaining--;
+      if (this.remaining === 0) {
+        this.complete();
+      }
+    }.bind(this));
+  };
+
   L.GetImage.prototype.complete = function() {
     this.assets.sort(function(a, b) {
       return a.sort - b.sort;
