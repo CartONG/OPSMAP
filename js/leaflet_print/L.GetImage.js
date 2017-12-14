@@ -48,27 +48,35 @@ var Color=function(){function a(a,b,c){return 0>c&&(c+=1),c>1&&(c-=1),1/6>c?a+6*
       layer = this.map._layers[layerId];
       
       if (layer._icon) {
-        if (layer._shadow) {
-          this.loadImage(layer._shadow);
+        if (layer._icon.tagName === 'IMG'){
+          if (layer._shadow) {
+            this.loadImage(layer._shadow);
+          }
+          this.loadImage(layer._icon);
+        } else if (layer._icon.tagName === 'DIV') {
+          this.remaining++;
+
+          var sort = this.sort++;
+
+          var bounds = layer._icon.getBoundingClientRect();
+
+          var pos = {
+		        x: bounds.left - this.mapOffset.left,
+		        y: bounds.top - this.mapOffset.top,
+		        w: bounds.width,
+		        h: bounds.height
+		      };
+
+          html2canvas(layer._icon, {
+						onrendered: function(canvas) {
+              this.remaining--;
+              this.assets.push({ type: 'image', image: canvas, pos: pos, sort: sort });
+              if (this.remaining === 0) {
+                this.complete();
+              }
+            }.bind(this)
+					});
         }
-        if (layer._icon.tagName === "IMG"){
-            this.loadImage(layer._icon);  
-        } 
-//        else if (layer._icon.tagName === "DIV"){
-//        	console.log(layer.options)
-//        	var imageSrc = layer._domIconCLuster;
-//        	var bounds = layer._domIconCLusterBounds;
-//		      var pos = {
-//		        x: bounds.left - this.mapOffset.left,
-//		        y: bounds.top - this.mapOffset.top,
-//		        w: bounds.width,
-//		        h: bounds.height
-//		      };
-//	        	var image = new Image;
-//	        	image.crossOrigin = '';
-//	        	image.src = imageSrc;
-//		      this.assets.push({ type: 'image', image: image, pos: pos, sort: sort });
-//        }
       }
  
       if (layer._tiles) {

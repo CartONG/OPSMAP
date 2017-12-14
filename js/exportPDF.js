@@ -45,7 +45,7 @@
 					background :'#FFFFFF',
 					onrendered: function(canvas) {						
 						var dataURL_canvas = canvas.toDataURL('image/jpeg').slice('data:image/jpeg;base64,'.length);
-						dataURL_canvas = atob(dataURL_canvas)
+						dataURL_canvas = atob(dataURL_canvas);
 						addAttributes(dataURL_canvas);
 					}
 				});
