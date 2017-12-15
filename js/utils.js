@@ -5,12 +5,12 @@
  */
 function getUniqueValues(items, prop) {
   var list = [], count = {};
-  items.forEach(function(i) {
-    if (list.indexOf(i[prop]) === -1) {
-      list.push(i[prop]);
-      count[i[prop]] = 1
+  items.forEach(function(item) {
+    if (list.indexOf(item[prop]) === -1) {
+      list.push(item[prop]);
+      count[item[prop]] = 1
     } else {
-      count[i[prop]] += 1;
+      count[item[prop]] += 1;
     }
   });
 
@@ -23,7 +23,7 @@ function getUniqueValues(items, prop) {
 function toProperCase(s) {
   return s.toLowerCase().replace(/^(.)|\s(.)|\u002D(.)|\u0027(.)/g,
 		function($1){ return $1.toUpperCase(); });
-};
+}
 
 /* getJsDateFromExcel(d) : returns converted data from EXCEL to javascript format.
  * @param d Integer : date value in EXCEL format (may vary, by default number of days since 01/01/1900).
