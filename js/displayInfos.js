@@ -2,8 +2,8 @@
 
 function info(h, fields, ch, map){
     //emptying divs   
-    $('#left_of_map').html("");
-    $('#below_map').html("");
+    $('#left_of_map').empty();
+    $('#below_map').empty();
 
     var c = config.data.categories;
 
@@ -30,7 +30,7 @@ function info(h, fields, ch, map){
                 $('#below_map').append('<div id="col_'+i+'" class="col-md-'+12/nb_col+'"></div>')
             }
             for (var i = 1; i <= rcl; i++){
-                var y = i%nb_col
+                var y = i%nb_col;
                 if (y==0){y=nb_col}
                 $('#col_'+ c[i].col).append("<div class='row categories'><h4 class='categoryTitle' data-cat='" + c[i].name + "'><img class='catImage' height='30px' data-cat='" + c[i].name + "' data-dataurl='" + c[i].dataUrl + "' src='img/ocha_icon/"+c[i].icon+".png'>&nbsp;"+c[i].alias+"</h4><div id='"+c[i].name+"'></div></div>")
             }
@@ -223,28 +223,28 @@ function info(h, fields, ch, map){
                 g.config.data.datasets[0].backgroundColor.push(color_list[i]);
                 g.config.data.labels.push(data_list[i].a);
             }
-
-
         }
+
         if(chartValidation){
             //creates the graphs div
             $("#"+g.category).append('<div class="canvas-holder" style="width:100%"><canvas height="'+g.height+'" id="chart_'+g.name+'" /></div>');										
             //generates the graphs
             var ctx = document.getElementById("chart_"+g.name).getContext("2d");
             var chart = new Chart(ctx, g.config);
-            $("#chart_" + g.name).addClass('infoEl');
-            $("#chart_" + g.name).attr('data-cat', f.category);
-            $("#chart_" + g.name).attr('data-chart', true);
+            $("#chart_" + g.name)
+              .addClass('infoEl')
+              .attr('data-cat', f.category)
+              .attr('data-chart', true);
         } else {
             $("#"+g.category).append("<p><img class='tl' src='img/tl/tl-null.svg'>&nbsp;<b style='color:#808080'><i>Data not available for age pyramid chart</i></b></p>")
         }
 
     }
     $('.exportB').on('click', function(){
-        var e = this.dataset.export
-        if (e === "page"){
+        var e = this.dataset.export;
+        if (e === "page") {
             exportPdf(map);
-        } else if (e === "doc"){										
+        } else if (e === "doc") {
             exportPdfDoc(map);
         }
     });		

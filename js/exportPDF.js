@@ -1,20 +1,20 @@
   /* OPSMAP exportPDF.js - Dec. 2017 - CartONG */
 
-            function PDFaddTextBloc(arrayOfTextLines, docX, docY, spacing) {
-                $.each(arrayOfTextLines, function(i, v){
-                    doc.text(docX, docY, v);
-                    docY += spacing;
-                });
-            }
+      function PDFaddTextBloc(arrayOfTextLines, docX, docY, spacing) {
+          $.each(arrayOfTextLines, function(i, v){
+              doc.text(docX, docY, v);
+              docY += spacing;
+          });
+      }
 
 			function exportPdf(mymap) {
                 
-		        function topFunction() {
-		            document.body.scrollTop = 0; // For Chrome, Safari and Opera
-		            document.documentElement.scrollTop = 0; // For IE and Firefox
-		        }
+        function topFunction() {
+            document.body.scrollTop = 0; // For Chrome, Safari and Opera
+            document.documentElement.scrollTop = 0; // For IE and Firefox
+        }
 
-		        topFunction();
+        topFunction();
 				 $('#modalMask').modal('show');
 //				swal({
 //					  title: "Exporting to PDF ...",
@@ -339,7 +339,7 @@
 							var wPx = $("#" + v.id).width();
 							// Pixel (Px) coversion to milimeters (Mm) ---- TODO : SHOULD BE RE-DONE CONSIDERING #pxMmTest
 							var wMm = (wPx/1.5) * 0.2578796561604585;
-							doc.addImage(dataUrlChart, 'JPG', x, y, wMm, hMm)
+							doc.addImage(dataUrlChart, 'JPG', x, y, wMm, hMm);
 							y += hMm;
 							
 						}
@@ -385,3 +385,4 @@
 //					  showCancelButton: false,
 //					});				
 			}
+  

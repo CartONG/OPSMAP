@@ -3,7 +3,7 @@
 var config = {};
 config.appConfig = {
 // General
-    // Language - STRING : Works only for the dictionnary.
+    // Language - STRING : Works only for the dictionary.
     Language : "en",
 
 // Map options
@@ -23,17 +23,19 @@ config.appConfig = {
     DefaultZoom: 5,
 
     // DefaultCenter - ARRAY : Array of FLOATs, coordinates for init map centre [y, x].
-    DefaultCenter: [5.54, 46.7],
-}
+    DefaultCenter: [5.54, 46.7]
+};
+
 // config.dictionary : set a dictionnary for dataset values - each value listed from the dataset as property of the dictionnary object holds an object containing matching aliases for given languages.
 config.dictionary = {
     planned_site: {
-        en: "Planned site",			
+        en: "Planned site"
     },
     spontaneous_site: {
         en: "Spontaneous site"
     }    
-}
+};
+
 config.data = {
 		
 		// URL of the dataset
@@ -238,7 +240,7 @@ config.data = {
 					type: "horizontalBar",
 					data:{
 						datasets: [{
-							label:"Female",
+							label: "Female",
 							backgroundColor: '#f37788',
 							data:[]
 						}, 
@@ -247,107 +249,102 @@ config.data = {
 							backgroundColor: '#4095cd',
 							data:[]
 						}],
-						labels: ["60+", "18-59", "5-17", "1-4", "0-1"],
-
+						labels: ["60+", "18-59", "5-17", "1-4", "0-1"]
 					},
 					options: {
-                    // Elements options apply to all of the options unless overridden in a dataset
-                    // In this case, we are setting the border of each horizontal bar to be 2px wide
-                    
-                    responsive: true,
-                    legend: {
-                        position: 'top',
-						reverse: true
-                    },
-                    title: {
-                        display: true,
-                        text: 'Age Pyramid'
-                    },
-					scales: {
-						xAxes: [
-							{
-							ticks: {
-								callback: function(label, index, labels) {
-									if (label < 0){
-										return 0-label;
-									}
-									else {return label}
-									}
-								}
-							}
-						],
-						yAxes: [{
-                            stacked: true,
-							barThickness:15,
-                        }]
-					}
-                }
-				}	
-			},
-		]
-
-}
+              // Elements options apply to all of the options unless overridden in a dataset
+              // In this case, we are setting the border of each horizontal bar to be 2px wide
+              responsive: true,
+              legend: {
+                  position: 'top',
+  	  	  				reverse: true
+              },
+              title: {
+                  display: true,
+                  text: 'Age Pyramid'
+              },
+					    scales: {
+						      xAxes: [{
+                      ticks: {
+                          callback: function(label, index, labels) {
+                              if (label < 0){
+                                  return 0-label;
+                              } else {
+                                  return label
+                              }
+                          }
+                      }
+                  }],
+                  yAxes: [{
+                      stacked: true,
+							        barThickness: 15
+                  }]
+					    }
+          }
+				}
+    }]
+};
 
 // list of colors for graphs
-var color_list = ['#0072bc','#4095cd','#7fb8dd','#bfdcee','#bfbfbf']
+var color_list = ['#0072bc','#4095cd','#7fb8dd','#bfdcee','#bfbfbf'];
 
 
 config.tlRules = {
     "percentagegreen" : function(v){
-        if (v === "more_75%" || v === "more 75%" || v === "More than 75%"){
+        if (v === "more_75%" || v === "more 75%" || v === "More than 75%") {
             return "success";
         }
-        else if (v === "btw_50%_75%" || v === "btw 50% 75%" || v === "Between 50% and 75%"){
+        else if (v === "btw_50%_75%" || v === "btw 50% 75%" || v === "Between 50% and 75%") {
             return "warning";
         }
         else {
             return "danger";
         }
     },
-    "percentagered" : function(v){
-        if (v === "more_75%" || v === "more 75%" || v === "More than 75%"){
+    "percentagered" : function(v) {
+        if (v === "more_75%" || v === "more 75%" || v === "More than 75%") {
             return "danger";
         }
-        else if (v === "btw_50%_75%" || v === "btw 50% 75%" || v === "btw 25% 50%" || v === "btw_25%_50%" || v === "Between 50% and 75%" || v === "Between 25% and 50%"){
+        else if (v === "btw_50%_75%" || v === "btw 50% 75%" || v === "btw 25% 50%" || v === "btw_25%_50%" || v === "Between 50% and 75%" || v === "Between 25% and 50%") {
             return "warning";
         }
         else {
             return "success";
         }
     },
-    "distance" : function(v){
+    "distance" : function(v) {
         var Vn = parseInt(v);
         if (Vn > 30){
             return "danger";
         }
-        else if (Vn <= 30 && Vn > 20){
+        else if (Vn <= 30 && Vn > 20) {
             return "warning";
         }
-        else if (Vn <= 20 && Vn > 10){
+        else if (Vn <= 20 && Vn > 10) {
             return "mid";
         }
         else {
             return "success";
         }       
     },
-    "distanceWater" : function(v){
+    "distanceWater" : function(v) {
         var Vn = parseInt(v);
         if (Vn > 10){
             return "danger";
         }
-        else if (Vn <= 10 && Vn > 5){
+        else if (Vn <= 10 && Vn > 5) {
             return "warning";
         }
         else {
             return "success";
         }
     },
-    "waterDays" : function(v){
+    "waterDays" : function(v) {
         var Vn = parseInt(v);
         if (Vn < 4) {
             return "danger";
         }
-        else if (Vn >= 5 && Vn < 7){
+        else if (Vn >= 5 && Vn < 7) {
             return "warning";
         }
         else {
@@ -355,7 +352,7 @@ config.tlRules = {
         }
     },
     "wasteDisposal" : function(v){
-        if (v === "daily" || v === "weekly"){
+        if (v === "daily" || v === "weekly") {
             return "success";
         }
         else if (v === "monthly"){
@@ -406,4 +403,4 @@ config.tlRules = {
             return "success";
         }        
     }    
-}
+};
