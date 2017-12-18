@@ -48,14 +48,17 @@ var Leaflet_mapLegend = function(pos, layerGroup, expectedValues, dictionary, la
   legend.legendDisplay = new L.featureGroup();
   legend.onAdd = function(map) {
     this._div = L.DomUtil.create('div', 'mapLegend table-responsive');
+    $(this._div).click(function(e){
+        e.stopPropagation();
+    });
     $(this._div).hover(
-      function() {
-        map.doubleClickZoom.disable();
-      },
-      function() {
-        map.doubleClickZoom.enable();
-      }
-    );
+        function(){
+            map.doubleClickZoom.disable();
+        },
+        function(){
+            map.doubleClickZoom.enable();
+        }
+    );      
     this.update();
     return this._div;
   };

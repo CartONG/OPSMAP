@@ -1,7 +1,5 @@
 /* OPSMAP site.js - Dec. 2017 - CartONG */
 
-
-
 swal({
   title: 'Loading',
   html: '<i class="glyphicon glyphicon-hourglass" style="font-size: 40px;color:#286090"></i>',
@@ -23,13 +21,70 @@ function toDataURL(url, callback) {
 }
 
 $(function() {
-//    $('.typeahead').hide();
-//    $('#left_of_map').hide();
-//    $('#analysis').hide();
-    
-    $('title').html(config.appConfig.Title);
-    $('#appTitle').html(config.appConfig.Title);
-    
+  $('.typeahead').hide();
+  $('#left_of_map').hide();
+  $('#analysis').hide();
+
+  $.each(config.data.categories, function(i, v) {
+    var url = 'img/ocha_icon/' + v.icon + '.png';
+    toDataURL(url, function(dataUrl) {
+      v['dataUrl'] = dataUrl;
+    });
+  });
+
+  // Add config-defined rules to global traffic lights rules object.
+  OPSMAP_AddCustomTlRules(config.tlRules);
+
+  var u = config.data;
+  var map;
+
+  Papa.parse(u.urlExC, {
+    download: true,
+    header: true,
+//	worker: true,	
+    delimiter: ',',
+    complete: function(externalChoices) {
+      var external = externalChoices.data;
+      var ext = {};
+      $.each(external, function(i, v) {
+        if (!ext[v.list_name]) {
+          ext[v.list_name] = {};
+        }
+        ext[v.list_name][v.name] = v['label'];
+      });
+      Papa.parse(u.urlC, {
+        download: true,
+//			worker: true,	
+        header: true,
+        delimiter: ',',
+        complete: function(choices) {
+          var rawChoices = choices.data;
+          Papa.parse(u.urlD, {
+            download: true,
+            header: true,
+//					worker: true,	
+            delimiter: ',',
+            complete: function(results) {
+              var data = results.data;
+              var ch = {};
+              $.each(rawChoices, function(i, v) {
+                if (!ch[v.list_name]) {
+                  ch[v.list_name] = {};
+                }
+                ch[v.list_name][v.name] = v['label::English'];
+              });
+              $.each(ext, function(k, v) {
+                if (!ch[k]) {
+                  ch[k] = v;
+                }
+              });
+              Papa.parse(u.urlF, {
+                download: true,
+                header: true,
+//							worker: true,	
+                delimiter: ',',
+                complete: function(r) {
+                  var fields = r.data;
                   // RUN ZOOM INTERACTION - Set zoom interaction at start to avoid shivers behaviour (along with lines below).
                   var defaultZoom = (function() {
                     if (config.appConfig.MapMinZoom) {
@@ -57,9 +112,9 @@ $(function() {
                       });
                     });
                     map.setMaxBounds(bounds);
-                  }    
-    
-                      //scalebar
+                  }
+
+                  //scalebar
                   L.control.scale().addTo(map);
 
                   //basemaps
@@ -140,96 +195,9 @@ $(function() {
                     map.addLayer(csv_markers);
                   }
                   var marker_list = [];
-    
-                      // animationend event : avoids hovered markers to get 'trapped' into a cluster (and hence keep the hovered style) on zoom change.
-                  csv_markers.on('animationend', function(a) {
-                    $.each(a.target.getLayers(), function(i, v) {
-                      if (v.options.icon === v.options.iconSet.iconHovered) {
-                        v.setIcon(v.options.iconSet.icon);
-                        v.closePopup();
-                      }
-                    })
-                  });
-
-                  $('.js-loading-bar').hide();
-                  $('.container').show();
-
-    $.each(config.data.categories, function(i, v) {
-        var url = 'img/ocha_icon/' + v.icon + '.png';
-        toDataURL(url, function(dataUrl) {
-            v['dataUrl'] = dataUrl;
-        });
-    });
-
-    // Add config-defined rules to global traffic lights rules object.
-    OPSMAP_AddCustomTlRules(config.tlRules);
-
-    var cfgD = config.data;
-
-    function OPSMAP_loadCSV(url, callback){
-        Papa.parse(url, {
-            download: true,
-            header: true,
-            delimiter: true,
-            complete: function(result){
-                callback(result.data);
-            }
-        });
-    }
-
-    var OPSMAP_remainingSources = (function(){
-        var nb = 2;
-        if (cfgD.loadChoices){nb += 1;}
-        if (cfgD.loadExternal){nb += 1;}
-        return nb;
-    })();
-
-    var OPSMAP_fields, OPSMAP_choices, OPSMAP_dataset, OPSMAP_externalChoices;
-
-    OPSMAP_loadCSV(cfgD.dataset, function(data){
-        OPSMAP_dataset = data;
-        OPSMAP_remainingSources--;
-        if (!OPSMAP_remainingSources) {
-            OPSMAP_processData(OPSMAP_fields, OPSMAP_dataset, OPSMAP_choices, OPSMAP_externalChoices);
-        }    
-    });
-
-    if (cfgD.loadExternal) {
-        OPSMAP_loadCSV(cfgD.externalChoices, function(data){
-            OPSMAP_externalChoices = data;
-            OPSMAP_remainingSources--;
-            if (!OPSMAP_remainingSources) {
-                OPSMAP_processData(OPSMAP_fields, OPSMAP_dataset, OPSMAP_choices, OPSMAP_externalChoices);
-            }    
-        });
-    }
-
-    OPSMAP_loadCSV(cfgD.fields, function(data){
-        OPSMAP_fields = data;
-        OPSMAP_remainingSources--;
-        if (!OPSMAP_remainingSources) {
-            OPSMAP_processData(OPSMAP_fields, OPSMAP_dataset, OPSMAP_choices, OPSMAP_externalChoices);
-        }    
-    });
-
-    if (cfgD.loadChoices) {
-        OPSMAP_loadCSV(cfgD.choices, function(data){
-            OPSMAP_choices = data;
-            OPSMAP_remainingSources--;
-            if (!OPSMAP_remainingSources) {
-                OPSMAP_processData(OPSMAP_fields, OPSMAP_dataset, OPSMAP_choices, OPSMAP_externalChoices);
-            }    
-        });
-    }
 
 
-    function OPSMAP_processData(fields, dataset, choices, externalChoices) {
-
- 
-        
-        
-        
-                $.each(dataset, function(i, v) {
+                  $.each(data, function(i, v) {
                     if (v[config.data.lat] && v[config.data.lon]) {
                       var tValues = config.data.expectedTypes;
                       var t = v[config.data.type];
@@ -311,17 +279,29 @@ $(function() {
                       });
                     }
                   });
-        
 
                   // RUN ZOOM INTERACTION - Part of action described above.
                   if (config.appConfig.MapMaxZoom) {
                     if (map.getZoom()<config.appConfig.MapMaxZoom) {
                       map.setZoom(map.getZoom() + 1);
                     }
-                  }        
-        
+                  }
+
+                  // animationend event : avoids hovered markers to get 'trapped' into a cluster (and hence keep the hovered style) on zoom change.
+                  csv_markers.on('animationend', function(a) {
+                    $.each(a.target.getLayers(), function(i, v) {
+                      if (v.options.icon === v.options.iconSet.iconHovered) {
+                        v.setIcon(v.options.iconSet.icon);
+                        v.closePopup();
+                      }
+                    })
+                  });
+
+                  $('.js-loading-bar').hide();
+                  $('.container').show();
+
                   //LEGEND GLOBALS
-                  var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.data.expectedTypes, config.dictionary, config.appConfig.Language, true, dataset, config.data.type, true);
+                  var legend = new Leaflet_mapLegend('bottomright', csv_markers, config.data.expectedTypes, config.dictionary, config.appConfig.Language, true, data, config.data.type, true);
                   legend.addTo(map);
 
                   if (config.appConfig.MapClustering) {
@@ -438,34 +418,15 @@ $(function() {
 
                   //********  when clicking on a marker  ********//
 //									$('.progress-bar').css('width', '100%');
-                  swal.close();        
-        
-        
-               // Create dictionary for choices    -- TODO : Simplify
-        var ch = {};
-        $.each(choices, function(i, v) {
-            if (!ch[v.list_name]) {
-              ch[v.list_name] = {};
+                  swal.close();
+//									$('.container').show();
+
+                }
+              });
             }
-            ch[v.list_name][v.name] = v['label::English'];
-        });
-        
-        // Create dictionary for external choices   -- TODO : Simplify
-        var ext = {};
-        $.each(externalChoices, function(i, v) {
-            if (!ext[v.list_name]) {
-              ext[v.list_name] = {};
-            }
-            ext[v.list_name][v.name] = v['label'];
-        });
-        
-        // Merge dictionaries   -- TODO : Simplify
-        $.each(ext, function(k, v) {
-            if (!ch[k]) {
-              ch[k] = v;
-            }
-        });   
-        
-        
+          });
+        }
+      });
     }
-});
+  });
+});	

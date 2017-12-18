@@ -3,6 +3,9 @@
 var config = {};
 config.appConfig = {
 // General
+    // Title - STRING.
+    Title : "OPSMAP - Somalia",
+    
     // Language - STRING : Works only for the dictionary.
     Language : "en",
 
@@ -39,16 +42,22 @@ config.dictionary = {
 config.data = {
 		
 		// URL of the dataset
-		urlD : "data/dataset.csv",
+		dataset : "data/dataset.csv",
     
 		// URL of the fields definition
-		urlF : "data/fields.csv",    
+		fields : "data/fields.csv",
     
-		// URL of the choices
-		urlC : "data/choices.csv",
+        // Load choices, set to false if no choices requested
+        loadChoices : true,
     
-		// URL of the external choices
-		urlExC : "data/external_choices.csv",    
+            // URL of the choices
+            choices : "data/choices.csv",
+    
+        // Load external choices, set to false if no external choices requested
+        loadExternal : true,
+
+            // URL of the external choices
+            externalChoices : "data/external_choices.csv",    
 		
 		// Latitude field
 		lat : "geopoint_latitude",
