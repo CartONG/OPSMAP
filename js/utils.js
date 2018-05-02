@@ -42,15 +42,17 @@ function getJsDateFromExcel(d) {
  */
 
 function toDataURL(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    var reader = new FileReader();
-    reader.onloadend = function() {
-      callback(reader.result);
-    };
-    reader.readAsDataURL(xhr.response);
-  };
-  xhr.open('GET', url);
-  xhr.responseType = 'blob';
-  xhr.send();
+  var canvas = document.createElement('CANVAS');
+  canvas.height = 30;
+  canvas.width = 30;
+  var ctx = canvas.getContext('2d');
+  var image = new Image();
+  image.src = url;
+  image.height = 30;
+  image.width = 30;
+  image.addEventListener('load', function() {
+    ctx.drawImage(image,0 ,0, 30, 30);
+    var dataURL = canvas.toDataURL();
+    callback(dataURL)
+  }, false);
 }

@@ -257,7 +257,6 @@
 //					console.log($('img[data-cat="' + v.dataset.cat + '"]')[0].src);
 					
 					var img = $('img[data-cat="' + v.dataset.cat + '"]')[0];
-					
 //					doc.addImage(imgDataUrl, 'PNG', 10, y, 30, 30);
 					
 
@@ -267,8 +266,7 @@
 //						doc.addImage(img, 'PNG', x, y - 3, 4.5, 4.5);
 
 //					debugger;
-//					console.log(img.dataset.dataurl)
-                    console.log(img.dataset.dataurl);
+
 					doc.addImage(img.dataset.dataurl, 'PNG', x, y - 3, 4.5, 4.5);
 //					doc.addImage('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABCBJREFUeNrkW81t4kAUNlbu6w7wVrBOBcB1LyEVxNxXClTgUAFEyh2nAshlrzgVxFSwbAdOBdl50TfRZNbG82dDzJNGCOPxvG/e/xvT8w7Qt1+/x+zjio0hG6F32rRnI2Pj6fXh56bqpl4FUAK4+gIgD4GfMOCZ/INfAnbBPrZfGKwH3rfAUi1hdgNJNfa6RSmT9OQ/CWM3ugaWKBYl3RNsdut1m0Zk01zCK6/79I6xh9CzdvjgnI1C+B6xESjOLTCfU4D5ruj6AnHWlojReziIfUU8v0U8LyMKH/dl8ZPNDeFbbjU2roquSMJ/LEPQko05Y7aouxHAF8J6tDmzQ4mCMJfAJmxMbeIzAX6zeAAF91R3EqQWsLm5wdzYxufYADYC64JsQPsWqVvuHY9y8NAaYJ66RUeQbmST+voWawdtgxbAGntr35IHDnrYAtihLVgXgEXQcYNgYxdgbb10VUx+dY3XMvZ+ogvHzE29EyffOzM6O8CuVJpy4V3DvP5gY3wKgD+1UBoOTdYtKFuVztoCS4S1smMBpnz22oHUApR+ykW8TR5vA3iiUgOr1Lg6z8G9k7YBz01q2RKi1tJzVc1c1lcGaFp73hbgPVvwzlG6SPlxUQKU0siDnRjwoF0imnjpiQM1JqCLkt8IRCJcelTgZdukhLOy8xpNsGtIjjuqKyHkJJImbWrsOdP12rqAHy01OYEaDoRrY9S5saEmPTYFuLDpYaGepeLir1TmhSVlX6qqSeCpaAJwaqrGkm0OZAYBbslLTINkJm0C8JOhcLewM94VGUINOegU9huB8Z2sGQrNBWXelBsAbNd7BtK9g1OiU4mVZJ8bqPKioijIoe6k3jOFtd5cSjgzABtCjYOSeBpSxoRjmaq0MkA2N3PJoypgk6wqEZxSfuB5c8mm97DnS5UjGF0eVRMPkz7VWPLEpMY3YCxhGrAWAKbw3jlsuW+Qp78eTaX52ZFwaUDhg40RgEXSZkxhy++dSQ011ubRdRPPO2CPdapHDM8cFSXtAiZnxKQshqJnHJUGQh19K2zADmnrvumdb1LC10gXC4BLJMe0gd31ucq3oWqNdC2RG0cMxBLg5PMnbre0Ebs220S+gQ2qOCxyPmvKkpA25hXp4CU2xbWfsFbpCCqoWv7xxW/gjEYIUyFXZ9v2UAWPzgD3Fe9bCQt/tG8Brmkb7bsEHCqWfzzZOMbrEKFLGx7WtVJhqwRy1DZYoW3kNCyN69SyTW8rUax6o05YWmg2zNuSbijF+FrAqtkNP+kPTwzsWiNs7n3NwoA88AtbaHpMaaNtRInLi6f3LmZm+3JphtRx1xLWgdAmMkp3+fvStu9bfgWiPvd3X+gxdZ0mH15aapN2kZa8z32+f/IQEodlxyT7yVzP7o9avZp417m/4v0TYADtuK8e6sSwswAAAABJRU5ErkJggg==', 'PNG', x, y - 3, 4.5, 4.5);
 					
