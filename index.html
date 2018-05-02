@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Somalia - OPSMAP</title>
-        <link rel="shortcut icon" href="img/favicon.ico" type="img/favicon.ico" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title></title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="img/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<<<<<<< HEAD
         <link rel="stylesheet" href="dist/leaflet/leaflet.css" />
         <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.css" />
         <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.Default.css" />
         <link rel="stylesheet" href="dist/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/mapLegend.css" />
         <link rel="stylesheet" href="css/main.css" />
+=======
+        <link rel="stylesheet" href="dist/leaflet/leaflet.css">
+        <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.css">
+        <link rel="stylesheet" href="dist/Leaflet.markercluster/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="dist/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/mapLegend.css">
+        <link rel="stylesheet" href="css/main.css">
+>>>>>>> master
     </head>
     <body>
         <div class="container">
             <div class="row topRow">
                 <div class="col-md-4">
                     <div class="row">
-                        <h3><img src="img/logo_cccm.png" height="39px"></h3>
+                        <h3><img src="img/logo_cccm.png" height="39"></h3>
                         <h3 style="color:red">WORK IN PROGRESS</h3>
-                        <h3 id="appTitle">Somalia - OPSMAP</h3>
-                        <h3><input type="text" class="form-control typeahead" placeholder="Search site ..." data-provide="typeahead"></h3>
+                        <h3 id="appTitle"></h3>
+                        <h3><input type="text" class="form-control typeahead" placeholder="Search site ..." data-provide="typeahead" style="display:none"></h3>
                     </div>
                     <div class="row">
-                        <div id="left_of_map">Search for a site or select one in the map to start. </div>
+                        <div id="left_of_map" style="display:none">Search for a site or select one in the map to start. </div>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -46,7 +55,7 @@
         <!-- pxMmTest : Can be useful for exportPDF -->
         <div id="pxMmTest" style="height:1mm;display:none"></div>
 
-        <script src="libs/jquery-1.11.3.min.js" ></script>
+        <script src="libs/jquery-1.11.3.min.js"></script>
         <script src="dist/leaflet/leaflet.js"></script>
         <script src="dist/Leaflet.markercluster/leaflet.markercluster.js"></script>
         <script src="dist/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
@@ -65,6 +74,5 @@
         <script src="js/mapLegend.js"></script>                    
         <script src="js/displayInfos.js"></script>   
         <script src="js/site.js"></script>
-
     </body>
 </html>
