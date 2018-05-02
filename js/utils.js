@@ -36,3 +36,21 @@ function getJsDateFromExcel(d) {
   var YYYY = date.getFullYear();
   return DD + '/' + MM + '/' + YYYY;
 }
+
+/* toDataURL(url, callback) -- TODO : Complete
+ *
+ */
+
+function toDataURL(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    var reader = new FileReader();
+    reader.onloadend = function() {
+      callback(reader.result);
+    };
+    reader.readAsDataURL(xhr.response);
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
