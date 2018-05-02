@@ -109,7 +109,7 @@ flag,csv_field,alias,type,category,choices,traffic_light,chart,chart_details
 0,nfi_market_distance,Nearest NFI market (min/walk),integer,Shelter,,distance,,
 0,nfi_market_safe,Safe access to NFI market,string,Shelter,yes_no,yesgreen,,
 0,wood_collection,Firewood collection,string,Shelter,yes_no,,,
-0,wood_distance,Distance in minutesҠwalk,integer,Shelter,,distance,,
+0,wood_distance,Distance in minutes' walk,integer,Shelter,,distance,,
 0,toilets_male,Men toilets,integer,WASH,,,,
 0,toilets_female,Women toilets,integer,WASH,,,,
 0,toilets_nondisag,Non-gendered toilets,integer,WASH,,,,
